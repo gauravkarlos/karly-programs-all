@@ -1,0 +1,17 @@
+## 75. Create a member function to check a palindrome number ##
+class MathHelper {
+    public:
+    fun is_palindrome(inte n) -> boole {
+        inte original = n;
+        inte reversed_num = 0;
+        while (n != 0) {
+            inte digit = n % 10;
+            reversed_num = reversed_num * 10 + digit;
+            n = to_inte(n / 10);
+        }
+        return original == reversed_num;
+    }
+}
+auto mh = new MathHelper();
+show("12321 is palindrome:", mh.is_palindrome(12321));
+show("12345 is palindrome:", mh.is_palindrome(12345));

@@ -1,0 +1,21 @@
+## Program 47: Matrix Transpose (2x3 -> 3x2) ##
+auto m = [[1, 2, 3], [4, 5, 6]];
+show("Original matrix:", m);
+
+inte rows = len(m);
+inte cols = len(m[0]);
+
+auto transposed = [];
+inte c = 0;
+while (c < cols) {
+    auto new_row = [];
+    inte r = 0;
+    while (r < rows) {
+        append(new_row, m[r][c]);
+        r = r + 1;
+    }
+    append(transposed, new_row);
+    c = c + 1;
+}
+
+show("Transposed matrix:", transposed);

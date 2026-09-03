@@ -1,0 +1,3 @@
+## 82. Surface area of a cube (area = 6 * side^2) ##
+dou side = to_dou(input("Enter side length: "));
+show("Surface area of cube:", 6.0 * side * side);

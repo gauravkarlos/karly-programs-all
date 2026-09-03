@@ -1,0 +1,14 @@
+## 50. Find digital root (repeated digit sum until a single digit remains) ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+
+while (n >= 10) {
+    inte total = 0;
+    while (n != 0) {
+        total = total + (n % 10);
+        n = to_inte(n / 10);
+    }
+    n = total;
+}
+
+show("Digital root of", original, "is", n);

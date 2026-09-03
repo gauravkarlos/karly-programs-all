@@ -1,0 +1,9 @@
+## 69. Create a member function to calculate circle area ##
+class Circle {
+    public:
+    dou radius = 0.0;
+    fun __init__(dou r) { this.radius = r; }
+    fun area() -> dou { return 3.14159 * this.radius * this.radius; }
+}
+auto c = new Circle(5.0);
+show("Area:", c.area());

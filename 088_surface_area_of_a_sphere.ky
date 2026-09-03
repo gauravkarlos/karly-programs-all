@@ -1,0 +1,4 @@
+## 88. Surface area of a sphere (area = 4 * pi * r^2) ##
+dou pi = 3.14159265358979;
+dou radius = to_dou(input("Enter radius: "));
+show("Surface area of sphere:", 4.0 * pi * radius * radius);

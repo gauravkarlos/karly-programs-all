@@ -1,0 +1,13 @@
+## 57. Create a user profile with encapsulated information ##
+class UserProfile {
+    private:
+        chr username;
+        chr email;
+    public:
+    fun __init__(chr u, chr e) { this.username = u; this.email = e; }
+    fun get_username() -> chr { return this.username; }
+    fun get_email() -> chr { return this.email; }
+}
+auto profile = new UserProfile("karly_dev", "dev@karlylang.co.in");
+show("Username:", profile.get_username());
+show("Email:", profile.get_email());

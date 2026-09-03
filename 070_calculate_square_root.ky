@@ -1,0 +1,16 @@
+## 70. Calculate square root (Newton's / Babylonian method) ##
+fun sqrt_approx(dou x) -> dou {
+    if (x <= 0) {
+        return 0.0;
+    }
+    dou guess = x;
+    inte i = 0;
+    while (i < 40) {
+        guess = (guess + x / guess) / 2.0;
+        i = i + 1;
+    }
+    return guess;
+}
+
+dou n = to_dou(input("Enter a number: "));
+show("Square root of", n, "~", sqrt_approx(n));

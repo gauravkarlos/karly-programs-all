@@ -1,0 +1,16 @@
+## 66. Create member functions to calculate student results ##
+class Student {
+    public:
+    dou marks1 = 0.0;
+    dou marks2 = 0.0;
+    dou marks3 = 0.0;
+    fun __init__(dou m1, dou m2, dou m3) { this.marks1 = m1; this.marks2 = m2; this.marks3 = m3; }
+    fun total() -> dou { return this.marks1 + this.marks2 + this.marks3; }
+    fun average() -> dou { return this.total() / 3.0; }
+    fun result() -> chr {
+        if (this.average() >= 40.0) { return "Pass"; }
+        return "Fail";
+    }
+}
+auto s = new Student(78.0, 65.0, 82.0);
+show("Total:", s.total(), " Average:", s.average(), " Result:", s.result());

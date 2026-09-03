@@ -1,0 +1,14 @@
+## 76. Create a static data member to count objects. Honesty note, verified directly: Karly's parser does not accept the static keyword inside a class body (only as a plain/function-local variable modifier) -- "static inte count;" as a class member is a parse error. The idiomatic Karly substitute, shown below, is a global variable incremented from inside the constructor, which gives the same practical "one counter shared by every instance" behavior. ##
+inte object_count = 0;
+
+class Widget {
+    public:
+    fun __init__() {
+        object_count = object_count + 1;
+    }
+}
+
+auto w1 = new Widget();
+auto w2 = new Widget();
+auto w3 = new Widget();
+show("Total widgets created:", object_count);

@@ -1,0 +1,10 @@
+## 90. Check whether three sides form a valid triangle (triangle inequality) ##
+dou a = to_dou(input("Enter side a: "));
+dou b = to_dou(input("Enter side b: "));
+dou c = to_dou(input("Enter side c: "));
+
+if ((a + b > c) && (b + c > a) && (a + c > b)) {
+    show(a, b, c, "-- these sides DO form a valid triangle");
+} el {
+    show(a, b, c, "-- these sides do NOT form a valid triangle");
+}

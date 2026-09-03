@@ -1,0 +1,16 @@
+## 58. Create a student class with controlled marks access ##
+class Student {
+    private:
+        dou marks;
+    public:
+    fun __init__() { this.marks = 0.0; }
+    fun update_marks(dou m) {
+        if (m >= 0.0 && m <= 100.0) {
+            this.marks = m;
+        }
+    }
+    fun get_marks() -> dou { return this.marks; }
+}
+auto s = new Student();
+s.update_marks(76.0);
+show("Marks:", s.get_marks());

@@ -1,0 +1,9 @@
+## 62. Calculate sum of cubes (1^3 + 2^3 + ... + n^3) ##
+inte n = to_inte(input("Enter N: "));
+inte total = 0;
+inte i = 1;
+while (i <= n) {
+    total = total + (i * i * i);
+    i = i + 1;
+}
+show("Sum of cubes from 1 to", n, "=", total);

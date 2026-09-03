@@ -1,0 +1,7 @@
+## 83. Overload an addition function for different numbers of arguments (default parameters are the idiomatic substitute -- see program 29) ##
+fun add(inte a, inte b, inte c = 0, inte d = 0) -> inte {
+    return a + b + c + d;
+}
+show("Two args:", add(2, 3));
+show("Three args:", add(2, 3, 4));
+show("Four args:", add(2, 3, 4, 5));

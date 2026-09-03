@@ -1,0 +1,15 @@
+## 92. Overload a function to calculate perimeter of different shapes ##
+class Square { public: dou side = 0.0; fun __init__(dou s) { this.side = s; } }
+class Rectangle { public: dou length = 0.0; dou width = 0.0; fun __init__(dou l, dou w) { this.length = l; this.width = w; } }
+class Triangle { public: dou a = 0.0; dou b = 0.0; dou c = 0.0; fun __init__(dou x, dou y, dou z) { this.a = x; this.b = y; this.c = z; } }
+
+fun perimeter(auto shape) -> dou {
+    if (has_field(shape, "side")) { return 4.0 * shape.side; }
+    if (has_field(shape, "length")) { return 2.0 * (shape.length + shape.width); }
+    if (has_field(shape, "a")) { return shape.a + shape.b + shape.c; }
+    return 0.0;
+}
+
+show("Square perimeter:", perimeter(new Square(5.0)));
+show("Rectangle perimeter:", perimeter(new Rectangle(4.0, 6.0)));
+show("Triangle perimeter:", perimeter(new Triangle(3.0, 4.0, 5.0)));

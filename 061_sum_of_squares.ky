@@ -1,0 +1,9 @@
+## 61. Calculate sum of squares (1^2 + 2^2 + ... + n^2) ##
+inte n = to_inte(input("Enter N: "));
+inte total = 0;
+inte i = 1;
+while (i <= n) {
+    total = total + (i * i);
+    i = i + 1;
+}
+show("Sum of squares from 1 to", n, "=", total);

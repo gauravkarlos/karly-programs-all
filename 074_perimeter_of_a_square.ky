@@ -1,0 +1,3 @@
+## 74. Perimeter of a square ##
+dou side = to_dou(input("Enter side length: "));
+show("Perimeter of square:", 4.0 * side);

@@ -1,0 +1,15 @@
+## 54. Find LCM using HCF (LCM = (a * b) / HCF) ##
+inte a = to_inte(input("Enter first number: "));
+inte b = to_inte(input("Enter second number: "));
+
+inte x = a;
+inte y = b;
+while (y != 0) {
+    inte temp = y;
+    y = x % y;
+    x = temp;
+}
+inte hcf = x;
+inte lcm = to_inte((a * b) / hcf);
+show("HCF:", hcf);
+show("LCM:", lcm);

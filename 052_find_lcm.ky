@@ -1,0 +1,17 @@
+## 52. Find LCM ##
+inte a = to_inte(input("Enter first number: "));
+inte b = to_inte(input("Enter second number: "));
+
+inte larger = a;
+if (b > larger) { larger = b; }
+
+inte lcm = larger;
+boole found = false;
+while (!found) {
+    if (lcm % a == 0 && lcm % b == 0) {
+        found = true;
+    } el {
+        lcm = lcm + larger;
+    }
+}
+show("LCM of", a, "and", b, "=", lcm);

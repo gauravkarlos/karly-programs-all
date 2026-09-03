@@ -1,0 +1,18 @@
+## 89. Calculate hypotenuse using the Pythagorean theorem (c = sqrt(a^2 + b^2)) ##
+fun sqrt_approx(dou x) -> dou {
+    if (x <= 0) {
+        return 0.0;
+    }
+    dou guess = x;
+    inte i = 0;
+    while (i < 40) {
+        guess = (guess + x / guess) / 2.0;
+        i = i + 1;
+    }
+    return guess;
+}
+
+dou a = to_dou(input("Enter side a: "));
+dou b = to_dou(input("Enter side b: "));
+dou hypotenuse = sqrt_approx(a * a + b * b);
+show("Hypotenuse:", hypotenuse);

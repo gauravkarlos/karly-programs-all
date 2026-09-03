@@ -1,0 +1,21 @@
+## 48. Check happy number (repeatedly sum squares of digits; happy if it reaches 1) ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+inte seen_count = 0;
+
+while (n != 1 && seen_count < 100) {
+    inte total = 0;
+    while (n != 0) {
+        inte digit = n % 10;
+        total = total + (digit * digit);
+        n = to_inte(n / 10);
+    }
+    n = total;
+    seen_count = seen_count + 1;
+}
+
+if (n == 1) {
+    show(original, "is a Happy number");
+} el {
+    show(original, "is NOT a Happy number");
+}

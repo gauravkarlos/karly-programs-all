@@ -1,0 +1,18 @@
+## 77. Create a static member function to display object count (same substitute as program 76 -- a plain function reading the shared global counter) ##
+inte widget_count = 0;
+
+class Widget {
+    public:
+    fun __init__() {
+        widget_count = widget_count + 1;
+    }
+}
+
+fun display_widget_count() {
+    show("Widgets so far:", widget_count);
+}
+
+auto w1 = new Widget();
+display_widget_count();
+auto w2 = new Widget();
+display_widget_count();

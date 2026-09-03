@@ -1,0 +1,11 @@
+## 67. Create a member function to calculate employee salary ##
+class Employee {
+    public:
+    dou basic = 0.0;
+    dou allowances = 0.0;
+    dou deductions = 0.0;
+    fun __init__(dou b, dou a, dou d) { this.basic = b; this.allowances = a; this.deductions = d; }
+    fun net_salary() -> dou { return this.basic + this.allowances - this.deductions; }
+}
+auto e = new Employee(30000.0, 5000.0, 2000.0);
+show("Net salary:", e.net_salary());

@@ -1,0 +1,14 @@
+## 85. Overload a display function for different types of information (duck-typed on whichever fields are present) ##
+class Book { public: chr title = ""; fun __init__(chr t) { this.title = t; } }
+class Person { public: chr name = ""; inte age = 0; fun __init__(chr n, inte a) { this.name = n; this.age = a; } }
+
+fun display(auto item) {
+    if (has_field(item, "title")) {
+        show("Book:", item.title);
+    } elif (has_field(item, "name")) {
+        show("Person:", item.name, "-", item.age);
+    }
+}
+
+display(new Book("Karly Basics"));
+display(new Person("Aria", 25));

@@ -1,0 +1,15 @@
+## 67. Calculate permutations (nPr = n! / (n - r)!) ##
+fun factorial_of(inte x) -> inte {
+    inte result = 1;
+    inte i = 2;
+    while (i <= x) {
+        result = result * i;
+        i = i + 1;
+    }
+    return result;
+}
+
+inte n = to_inte(input("Enter n: "));
+inte r = to_inte(input("Enter r: "));
+inte npr = to_inte(factorial_of(n) / factorial_of(n - r));
+show(n, "P", r, "=", npr);

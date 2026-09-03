@@ -1,0 +1,4 @@
+## 71. Area of a circle (area = pi * r^2) ##
+dou pi = 3.14159265358979;
+dou radius = to_dou(input("Enter radius: "));
+show("Area of circle:", pi * radius * radius);

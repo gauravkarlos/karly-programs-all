@@ -1,0 +1,5 @@
+## 83. Volume of a cuboid (volume = length * width * height) ##
+dou length = to_dou(input("Enter length: "));
+dou width = to_dou(input("Enter width: "));
+dou height = to_dou(input("Enter height: "));
+show("Volume of cuboid:", length * width * height);

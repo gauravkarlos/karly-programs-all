@@ -1,0 +1,13 @@
+## 50. Create getter and setter methods for employee salary ##
+class Employee {
+    private:
+        dou salary;
+    public:
+    fun __init__(dou s) { this.salary = s; }
+    fun get_salary() -> dou { return this.salary; }
+    fun set_salary(dou s) { this.salary = s; }
+}
+auto e = new Employee(50000.0);
+show("Salary:", e.get_salary());
+e.set_salary(55000.0);
+show("Updated salary:", e.get_salary());

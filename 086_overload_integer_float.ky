@@ -1,0 +1,6 @@
+## 86. Overload a function for integer and floating-point values (Karly is dynamically typed, so one untyped function already handles both -- no overload needed at all) ##
+fun square(auto x) -> auto {
+    return x * x;
+}
+show("Integer:", square(5));
+show("Float:", square(2.5));

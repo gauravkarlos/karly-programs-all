@@ -1,0 +1,11 @@
+## 66. Find divisor sum (sum of all divisors of a number, including itself) ##
+inte n = to_inte(input("Enter a number: "));
+inte total = 0;
+inte i = 1;
+while (i <= n) {
+    if (n % i == 0) {
+        total = total + i;
+    }
+    i = i + 1;
+}
+show("Sum of all divisors of", n, "=", total);

@@ -1,0 +1,19 @@
+## 64. Prevent direct modification of sensitive data (genuinely enforced with priblock) ##
+class MedicalRecord {
+    priblock:
+        chr diagnosis;
+    public:
+    fun __init__(chr d) {
+        this.diagnosis = d;
+    }
+    fun get_diagnosis() -> chr {
+        return this.diagnosis;
+    }
+}
+auto record = new MedicalRecord("Confidential");
+show("Diagnosis (read via method):", record.get_diagnosis());
+try {
+    record.diagnosis = "Tampered";
+} catch (e) {
+    show("Direct modification blocked:", e);
+}

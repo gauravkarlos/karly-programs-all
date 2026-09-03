@@ -1,0 +1,16 @@
+## 87. Overload a function to calculate different types of interest ##
+fun interest(dou principal, dou rate, dou time, boole is_compound = false) -> dou {
+    if (is_compound) {
+        dou amount = principal;
+        inte years = to_inte(time);
+        inte i = 0;
+        while (i < years) {
+            amount = amount * (1.0 + rate / 100.0);
+            i = i + 1;
+        }
+        return amount - principal;
+    }
+    return (principal * rate * time) / 100.0;
+}
+show("Simple interest:", interest(1000.0, 5.0, 2.0));
+show("Compound interest:", interest(1000.0, 5.0, 2.0, true));

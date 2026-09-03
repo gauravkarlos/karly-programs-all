@@ -1,0 +1,19 @@
+## 59. Create a temperature class with controlled temperature values ##
+class Thermometer {
+    private:
+        dou temperature;
+    public:
+    fun __init__() { this.temperature = 0.0; }
+    fun set_temperature(dou t) {
+        if (t >= -90.0 && t <= 60.0) {
+            this.temperature = t;
+        } el {
+            show("Rejected out-of-range reading:", t);
+        }
+    }
+    fun get_temperature() -> dou { return this.temperature; }
+}
+auto th = new Thermometer();
+th.set_temperature(37.0);
+th.set_temperature(500.0);
+show("Temperature:", th.get_temperature());

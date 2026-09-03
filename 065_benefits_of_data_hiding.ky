@@ -1,0 +1,25 @@
+## 65. Demonstrate the benefits of data hiding using a class -- comparing an unprotected field against a priblock-protected one on the same class ##
+class Account {
+    public:
+    dou public_balance = 100.0;
+
+    priblock:
+        dou protected_balance = 100.0;
+
+    public:
+    fun get_protected_balance() -> dou {
+        return this.protected_balance;
+    }
+}
+auto a = new Account();
+
+a.public_balance = -99999.0;
+show("Public field: freely (and dangerously) overwritten to", a.public_balance);
+
+try {
+    a.protected_balance = -99999.0;
+    show("This should not print");
+} catch (e) {
+    show("Protected field: modification blocked --", e);
+}
+show("Protected field's real value, still intact:", a.get_protected_balance());

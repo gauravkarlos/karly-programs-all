@@ -1,0 +1,6 @@
+## 84. Overload a multiplication function for different numbers of arguments ##
+fun multiply(inte a, inte b, inte c = 1) -> inte {
+    return a * b * c;
+}
+show("Two args:", multiply(3, 4));
+show("Three args:", multiply(3, 4, 2));

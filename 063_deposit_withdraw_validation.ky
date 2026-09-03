@@ -1,0 +1,27 @@
+## 63. Create a bank account with deposit and withdrawal validation ##
+class BankAccount {
+    private:
+        dou balance;
+    public:
+    fun __init__(dou b) { this.balance = b; }
+    fun deposit(dou amount) {
+        if (amount <= 0.0) {
+            show("Deposit rejected -- amount must be positive");
+            return;
+        }
+        this.balance = this.balance + amount;
+    }
+    fun withdraw(dou amount) {
+        if (amount <= 0.0 || amount > this.balance) {
+            show("Withdrawal rejected -- invalid amount or insufficient funds");
+            return;
+        }
+        this.balance = this.balance - amount;
+    }
+    fun get_balance() -> dou { return this.balance; }
+}
+auto acc = new BankAccount(2000.0);
+acc.deposit(500.0);
+acc.withdraw(10000.0);
+acc.withdraw(700.0);
+show("Final balance:", acc.get_balance());

@@ -1,0 +1,16 @@
+## 48. Create protected data members in a class hierarchy ##
+class Vehicle {
+    protected:
+        inte speed = 0;
+    public:
+    fun set_speed(inte s) { this.speed = s; }
+}
+class Car extends Vehicle {
+    public:
+    fun show_speed() {
+        show("Speed (accessed by subclass):", this.speed);
+    }
+}
+auto c = new Car();
+c.set_speed(80);
+c.show_speed();

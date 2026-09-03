@@ -1,0 +1,4 @@
+## 75. Area of a rectangle ##
+dou length = to_dou(input("Enter length: "));
+dou width = to_dou(input("Enter width: "));
+show("Area of rectangle:", length * width);

@@ -1,0 +1,4 @@
+## 77. Area of a triangle (area = 0.5 * base * height) ##
+dou base = to_dou(input("Enter base: "));
+dou height = to_dou(input("Enter height: "));
+show("Area of triangle:", 0.5 * base * height);

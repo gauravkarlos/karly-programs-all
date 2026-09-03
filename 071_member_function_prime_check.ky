@@ -1,0 +1,16 @@
+## 71. Create a member function to check whether a number is prime ##
+class NumberChecker {
+    public:
+    fun is_prime(inte n) -> boole {
+        if (n < 2) { return false; }
+        inte i = 2;
+        while (i * i <= n) {
+            if (n % i == 0) { return false; }
+            i = i + 1;
+        }
+        return true;
+    }
+}
+auto nc = new NumberChecker();
+show("17 is prime:", nc.is_prime(17));
+show("18 is prime:", nc.is_prime(18));

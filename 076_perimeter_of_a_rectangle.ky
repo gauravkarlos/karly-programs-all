@@ -1,0 +1,4 @@
+## 76. Perimeter of a rectangle ##
+dou length = to_dou(input("Enter length: "));
+dou width = to_dou(input("Enter width: "));
+show("Perimeter of rectangle:", 2.0 * (length + width));

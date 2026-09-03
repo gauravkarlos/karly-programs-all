@@ -1,0 +1,13 @@
+## 47. Check Harshad number (divisible by the sum of its digits) ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+inte total = 0;
+while (n != 0) {
+    total = total + (n % 10);
+    n = to_inte(n / 10);
+}
+if (total != 0 && original % total == 0) {
+    show(original, "is a Harshad number");
+} el {
+    show(original, "is NOT a Harshad number");
+}

@@ -1,0 +1,4 @@
+## 72. Circumference of a circle (C = 2 * pi * r) ##
+dou pi = 3.14159265358979;
+dou radius = to_dou(input("Enter radius: "));
+show("Circumference:", 2.0 * pi * radius);

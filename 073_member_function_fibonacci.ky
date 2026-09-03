@@ -1,0 +1,18 @@
+## 73. Create a member function to generate Fibonacci numbers ##
+class MathHelper {
+    public:
+    fun fibonacci(inte count) {
+        inte a = 0;
+        inte b = 1;
+        inte i = 0;
+        while (i < count) {
+            show(a);
+            inte next_val = a + b;
+            a = b;
+            b = next_val;
+            i = i + 1;
+        }
+    }
+}
+auto mh = new MathHelper();
+mh.fibonacci(7);

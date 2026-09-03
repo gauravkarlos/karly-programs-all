@@ -1,0 +1,14 @@
+## 46. Check neon number (sum of digits of n^2 equals n, e.g. 9 -> 81 -> 8+1=9) ##
+inte n = to_inte(input("Enter a number: "));
+inte square = n * n;
+inte total = 0;
+inte temp = square;
+while (temp != 0) {
+    total = total + (temp % 10);
+    temp = to_inte(temp / 10);
+}
+if (total == n) {
+    show(n, "is a Neon number (square =", square, ")");
+} el {
+    show(n, "is NOT a Neon number (square =", square, ")");
+}

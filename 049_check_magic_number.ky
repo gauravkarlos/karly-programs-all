@@ -1,0 +1,18 @@
+## 49. Check magic number (repeated digit sum reduces to 1) ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+
+while (n >= 10) {
+    inte total = 0;
+    while (n != 0) {
+        total = total + (n % 10);
+        n = to_inte(n / 10);
+    }
+    n = total;
+}
+
+if (n == 1) {
+    show(original, "is a Magic number");
+} el {
+    show(original, "is NOT a Magic number");
+}

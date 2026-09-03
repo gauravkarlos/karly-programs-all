@@ -1,0 +1,9 @@
+## 91. Overload a function to concatenate different numbers of strings ##
+fun join_words(chr a, chr b, chr c = "", chr d = "") -> chr {
+    chr result = a + " " + b;
+    if (c != "") { result = result + " " + c; }
+    if (d != "") { result = result + " " + d; }
+    return result;
+}
+show(join_words("Hello", "World"));
+show(join_words("Hello", "brave", "new", "World"));

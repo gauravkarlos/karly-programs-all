@@ -1,0 +1,5 @@
+## 85. Volume of a cylinder (volume = pi * r^2 * h) ##
+dou pi = 3.14159265358979;
+dou radius = to_dou(input("Enter radius: "));
+dou height = to_dou(input("Enter height: "));
+show("Volume of cylinder:", pi * radius * radius * height);

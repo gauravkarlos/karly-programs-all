@@ -1,0 +1,8 @@
+## 89. Overload a function to compare different types of values (Karly's == and < already work across inte, dou, and chr directly -- one untyped function handles all of them) ##
+fun larger(auto a, auto b) -> auto {
+    if (a > b) { return a; }
+    return b;
+}
+show("Larger of 5, 9:", larger(5, 9));
+show("Larger of 2.5, 1.1:", larger(2.5, 1.1));
+show("Larger of 'apple', 'banana':", larger("apple", "banana"));

@@ -1,0 +1,18 @@
+## 52. Validate marks using a setter method ##
+class Student {
+    private:
+        dou marks;
+    public:
+    fun __init__() { this.marks = 0.0; }
+    fun set_marks(dou m) {
+        if (m < 0.0 || m > 100.0) {
+            show("Invalid marks rejected:", m);
+        } el {
+            this.marks = m;
+            show("Marks set to:", m);
+        }
+    }
+}
+auto s = new Student();
+s.set_marks(88.5);
+s.set_marks(150.0);

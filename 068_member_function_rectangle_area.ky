@@ -1,0 +1,10 @@
+## 68. Create a member function to calculate rectangle area ##
+class Rectangle {
+    public:
+    dou length = 0.0;
+    dou width = 0.0;
+    fun __init__(dou l, dou w) { this.length = l; this.width = w; }
+    fun area() -> dou { return this.length * this.width; }
+}
+auto r = new Rectangle(9.0, 4.0);
+show("Area:", r.area());

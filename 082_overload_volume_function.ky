@@ -1,0 +1,16 @@
+## 82. Overload a function to calculate different types of volumes (duck-typed, same idiom as program 81) ##
+class Cube { public: dou side = 0.0; fun __init__(dou s) { this.side = s; } }
+class Cuboid { public: dou length = 0.0; dou width = 0.0; dou height = 0.0; fun __init__(dou l, dou w, dou h) { this.length = l; this.width = w; this.height = h; } }
+
+fun volume(auto shape) -> dou {
+    if (has_field(shape, "length")) {
+        return shape.length * shape.width * shape.height;
+    }
+    if (has_field(shape, "side")) {
+        return shape.side * shape.side * shape.side;
+    }
+    return 0.0;
+}
+
+show("Cube volume:", volume(new Cube(3.0)));
+show("Cuboid volume:", volume(new Cuboid(2.0, 3.0, 4.0)));

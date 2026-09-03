@@ -1,0 +1,7 @@
+## 90. Overload a function to calculate different types of salaries ##
+fun calculate_salary(dou basic, dou bonus = 0.0, dou deduction = 0.0) -> dou {
+    return basic + bonus - deduction;
+}
+show("Basic only:", calculate_salary(30000.0));
+show("With bonus:", calculate_salary(30000.0, 5000.0));
+show("With bonus and deduction:", calculate_salary(30000.0, 5000.0, 1500.0));

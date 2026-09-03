@@ -1,0 +1,18 @@
+## 53. Validate salary using a setter method ##
+class Employee {
+    private:
+        dou salary;
+    public:
+    fun __init__() { this.salary = 0.0; }
+    fun set_salary(dou s) {
+        if (s < 0.0) {
+            show("Invalid salary rejected:", s);
+        } el {
+            this.salary = s;
+            show("Salary set to:", s);
+        }
+    }
+}
+auto e = new Employee();
+e.set_salary(45000.0);
+e.set_salary(-1000.0);

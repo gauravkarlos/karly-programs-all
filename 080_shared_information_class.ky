@@ -1,0 +1,16 @@
+## 80. Create a class that shares common information among all objects (via the same global-variable substitute) ##
+chr company_name = "Karly Technologies";
+
+class Employee {
+    public:
+    chr name = "";
+    fun __init__(chr n) { this.name = n; }
+    fun show_company() {
+        show(this.name, "works at", company_name);
+    }
+}
+
+auto e1 = new Employee("Neha");
+auto e2 = new Employee("Rohit");
+e1.show_company();
+e2.show_company();

@@ -1,0 +1,18 @@
+## Program 49: Floyd's Triangle ##
+inte n = to_inte(input("Enter number of rows: "));
+inte current = 1;
+inte row = 1;
+while (row <= n) {
+    chr line = "";
+    inte col = 1;
+    while (col <= row) {
+        if (col > 1) {
+            line = line + " ";
+        }
+        line = line + to_str(current);
+        current = current + 1;
+        col = col + 1;
+    }
+    show(line);
+    row = row + 1;
+}

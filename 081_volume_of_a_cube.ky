@@ -1,0 +1,3 @@
+## 81. Volume of a cube (volume = side^3) ##
+dou side = to_dou(input("Enter side length: "));
+show("Volume of cube:", side * side * side);

@@ -1,0 +1,18 @@
+## 54. Validate product price using a setter method ##
+class Product {
+    private:
+        dou price;
+    public:
+    fun __init__() { this.price = 0.0; }
+    fun set_price(dou p) {
+        if (p < 0.0) {
+            show("Invalid price rejected:", p);
+        } el {
+            this.price = p;
+            show("Price set to:", p);
+        }
+    }
+}
+auto pr = new Product();
+pr.set_price(299.0);
+pr.set_price(-50.0);

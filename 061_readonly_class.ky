@@ -1,0 +1,19 @@
+## 61. Create a class with read-only information (genuinely enforced with priblock -- a value that can be set once, at construction, and never changed again) ##
+class Identity {
+    priblock:
+        chr id_number;
+    public:
+    fun __init__(chr id) {
+        this.id_number = id;
+    }
+    fun get_id() -> chr {
+        return this.id_number;
+    }
+}
+auto identity = new Identity("KID-0042");
+show("ID (read-only):", identity.get_id());
+try {
+    identity.id_number = "HACKED";
+} catch (e) {
+    show("Modification correctly blocked:", e);
+}

@@ -1,0 +1,15 @@
+## 78. Create a class-level counter for registered students ##
+inte registered_students = 0;
+
+class Student {
+    public:
+    chr name = "";
+    fun __init__(chr n) {
+        this.name = n;
+        registered_students = registered_students + 1;
+    }
+}
+
+auto s1 = new Student("Aria");
+auto s2 = new Student("Ben");
+show("Registered students:", registered_students);

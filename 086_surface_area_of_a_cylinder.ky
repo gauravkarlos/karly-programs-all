@@ -1,0 +1,5 @@
+## 86. Surface area of a cylinder (area = 2 * pi * r * (r + h)) ##
+dou pi = 3.14159265358979;
+dou radius = to_dou(input("Enter radius: "));
+dou height = to_dou(input("Enter height: "));
+show("Surface area of cylinder:", 2.0 * pi * radius * (radius + height));

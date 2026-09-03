@@ -1,0 +1,16 @@
+## 55. Check co-prime numbers (HCF == 1) ##
+inte a = to_inte(input("Enter first number: "));
+inte b = to_inte(input("Enter second number: "));
+
+inte x = a;
+inte y = b;
+while (y != 0) {
+    inte temp = y;
+    y = x % y;
+    x = temp;
+}
+if (x == 1) {
+    show(a, "and", b, "are Co-prime numbers");
+} el {
+    show(a, "and", b, "are NOT Co-prime numbers (HCF =", x, ")");
+}

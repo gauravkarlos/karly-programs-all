@@ -1,0 +1,16 @@
+## 81. Overload a function to calculate different types of areas. Karly has no true overload resolution (verified in program 29) -- a single duck-typed function that checks which fields the shape has is the idiomatic substitute for "one area() name, many shapes". ##
+class Square { public: dou side = 0.0; fun __init__(dou s) { this.side = s; } }
+class Rectangle { public: dou length = 0.0; dou width = 0.0; fun __init__(dou l, dou w) { this.length = l; this.width = w; } }
+
+fun area(auto shape) -> dou {
+    if (has_field(shape, "side")) {
+        return shape.side * shape.side;
+    }
+    if (has_field(shape, "length") && has_field(shape, "width")) {
+        return shape.length * shape.width;
+    }
+    return 0.0;
+}
+
+show("Square area:", area(new Square(5.0)));
+show("Rectangle area:", area(new Rectangle(4.0, 6.0)));

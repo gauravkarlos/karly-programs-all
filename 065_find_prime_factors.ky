@@ -1,0 +1,16 @@
+## 65. Find prime factors ##
+inte n = to_inte(input("Enter a number: "));
+show("Prime factors of", n, ":");
+
+inte remaining = n;
+inte divisor = 2;
+while (divisor * divisor <= remaining) {
+    while (remaining % divisor == 0) {
+        show(divisor);
+        remaining = to_inte(remaining / divisor);
+    }
+    divisor = divisor + 1;
+}
+if (remaining > 1) {
+    show(remaining);
+}

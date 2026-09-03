@@ -1,0 +1,19 @@
+## 62. Create a class with write-controlled information ##
+class Inventory {
+    private:
+        inte stock;
+    public:
+    fun __init__(inte s) { this.stock = s; }
+    fun reduce_stock(inte qty) {
+        if (qty > 0 && qty <= this.stock) {
+            this.stock = this.stock - qty;
+        } el {
+            show("Cannot reduce stock by", qty, "-- invalid amount");
+        }
+    }
+    fun get_stock() -> inte { return this.stock; }
+}
+auto inv = new Inventory(50);
+inv.reduce_stock(10);
+inv.reduce_stock(1000);
+show("Stock remaining:", inv.get_stock());

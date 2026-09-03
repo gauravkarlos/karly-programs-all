@@ -1,0 +1,10 @@
+## 70. Create a member function to check whether a number is even ##
+class NumberChecker {
+    public:
+    fun is_even(inte n) -> boole {
+        return n % 2 == 0;
+    }
+}
+auto nc = new NumberChecker();
+show("8 is even:", nc.is_even(8));
+show("7 is even:", nc.is_even(7));

@@ -1,0 +1,15 @@
+## 46. Create private data members and access them through methods. Honesty note, verified directly: plain private: is a documented convention, not an enforced boundary -- w.balance below reads successfully even though balance is marked private. Karly's real, enforced access control is priblock/problock (hash-chain sealed), used in program 055 onward wherever this list specifically calls for preventing direct access. ##
+class Wallet {
+    private:
+        dou balance;
+    public:
+    fun __init__(dou b) {
+        this.balance = b;
+    }
+    fun get_balance() -> dou {
+        return this.balance;
+    }
+}
+auto w = new Wallet(1000.0);
+show("Balance via the intended method:", w.get_balance());
+show("Balance via direct access anyway (not actually blocked):", w.balance);

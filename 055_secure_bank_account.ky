@@ -1,0 +1,25 @@
+## 55. Create a secure bank account with encapsulated balance ##
+class SecureAccount {
+    private:
+        dou balance;
+    public:
+    fun __init__(dou b) { this.balance = b; }
+    fun deposit(dou amount) {
+        if (amount > 0.0) {
+            this.balance = this.balance + amount;
+        }
+    }
+    fun withdraw(dou amount) {
+        if (amount > 0.0 && amount <= this.balance) {
+            this.balance = this.balance - amount;
+        } el {
+            show("Withdrawal denied -- insufficient funds or invalid amount");
+        }
+    }
+    fun get_balance() -> dou { return this.balance; }
+}
+auto acc = new SecureAccount(1000.0);
+acc.deposit(500.0);
+acc.withdraw(300.0);
+acc.withdraw(5000.0);
+show("Final balance:", acc.get_balance());

@@ -1,0 +1,5 @@
+## 80. Area of a trapezium (area = 0.5 * (a + b) * height) ##
+dou a = to_dou(input("Enter parallel side a: "));
+dou b = to_dou(input("Enter parallel side b: "));
+dou height = to_dou(input("Enter height: "));
+show("Area of trapezium:", 0.5 * (a + b) * height);

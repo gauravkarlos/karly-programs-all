@@ -1,0 +1,5 @@
+## 78. Perimeter of a triangle (sum of the three sides) ##
+dou a = to_dou(input("Enter side a: "));
+dou b = to_dou(input("Enter side b: "));
+dou c = to_dou(input("Enter side c: "));
+show("Perimeter of triangle:", a + b + c);

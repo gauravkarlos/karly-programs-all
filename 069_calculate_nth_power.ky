@@ -1,0 +1,10 @@
+## 69. Calculate n-th power of a number ##
+dou base = to_dou(input("Enter base: "));
+inte n = to_inte(input("Enter power: "));
+dou result = 1.0;
+inte i = 0;
+while (i < n) {
+    result = result * base;
+    i = i + 1;
+}
+show(base, "^", n, "=", result);

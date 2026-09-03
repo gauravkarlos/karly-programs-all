@@ -1,0 +1,6 @@
+## 84. Surface area of a cuboid (area = 2 * (lw + wh + hl)) ##
+dou length = to_dou(input("Enter length: "));
+dou width = to_dou(input("Enter width: "));
+dou height = to_dou(input("Enter height: "));
+dou area = 2.0 * (length * width + width * height + height * length);
+show("Surface area of cuboid:", area);

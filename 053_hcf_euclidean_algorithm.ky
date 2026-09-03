@@ -1,0 +1,12 @@
+## 53. Find HCF using the Euclidean algorithm ##
+inte a = to_inte(input("Enter first number: "));
+inte b = to_inte(input("Enter second number: "));
+
+inte x = a;
+inte y = b;
+while (y != 0) {
+    inte temp = y;
+    y = x % y;
+    x = temp;
+}
+show("HCF of", a, "and", b, "(Euclidean algorithm) =", x);

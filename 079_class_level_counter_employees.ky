@@ -1,0 +1,16 @@
+## 79. Create a class-level counter for employees ##
+inte total_employees = 0;
+
+class Employee {
+    public:
+    chr name = "";
+    fun __init__(chr n) {
+        this.name = n;
+        total_employees = total_employees + 1;
+    }
+}
+
+auto e1 = new Employee("Neha");
+auto e2 = new Employee("Rohit");
+auto e3 = new Employee("Sana");
+show("Total employees:", total_employees);

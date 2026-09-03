@@ -1,0 +1,4 @@
+## 87. Volume of a sphere (volume = 4/3 * pi * r^3) ##
+dou pi = 3.14159265358979;
+dou radius = to_dou(input("Enter radius: "));
+show("Volume of sphere:", (4.0 / 3.0) * pi * radius * radius * radius);

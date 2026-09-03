@@ -1,0 +1,13 @@
+## 47. Create public member functions for accessing private data ##
+class Thermostat {
+    private:
+        dou target_temp;
+    public:
+    fun __init__(dou t) { this.target_temp = t; }
+    fun get_target() -> dou { return this.target_temp; }
+    fun set_target(dou t) { this.target_temp = t; }
+}
+auto t = new Thermostat(21.0);
+show("Target:", t.get_target());
+t.set_target(24.0);
+show("Updated target:", t.get_target());

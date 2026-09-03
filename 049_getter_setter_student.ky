@@ -1,0 +1,13 @@
+## 49. Create getter and setter methods for student information ##
+class Student {
+    private:
+        chr name;
+    public:
+    fun __init__(chr n) { this.name = n; }
+    fun get_name() -> chr { return this.name; }
+    fun set_name(chr n) { this.name = n; }
+}
+auto s = new Student("Aria");
+show("Name:", s.get_name());
+s.set_name("Aria Sharma");
+show("Updated name:", s.get_name());

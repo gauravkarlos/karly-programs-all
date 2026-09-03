@@ -1,0 +1,16 @@
+## 51. Find HCF / GCD (basic loop method) ##
+inte a = to_inte(input("Enter first number: "));
+inte b = to_inte(input("Enter second number: "));
+
+inte smaller = a;
+if (b < smaller) { smaller = b; }
+
+inte hcf = 1;
+inte i = 1;
+while (i <= smaller) {
+    if (a % i == 0 && b % i == 0) {
+        hcf = i;
+    }
+    i = i + 1;
+}
+show("HCF/GCD of", a, "and", b, "=", hcf);

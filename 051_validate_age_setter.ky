@@ -1,0 +1,20 @@
+## 51. Validate age using a setter method ##
+class Person {
+    private:
+        inte age;
+    public:
+    fun __init__() { this.age = 0; }
+    fun set_age(inte a) {
+        if (a < 0 || a > 120) {
+            show("Invalid age rejected:", a);
+        } el {
+            this.age = a;
+            show("Age set to:", a);
+        }
+    }
+    fun get_age() -> inte { return this.age; }
+}
+auto p = new Person();
+p.set_age(30);
+p.set_age(-5);
+show("Final age:", p.get_age());

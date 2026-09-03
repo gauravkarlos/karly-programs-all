@@ -1,0 +1,11 @@
+## 59. Calculate sum of even numbers from 1 to N ##
+inte n = to_inte(input("Enter N: "));
+inte total = 0;
+inte i = 1;
+while (i <= n) {
+    if (i % 2 == 0) {
+        total = total + i;
+    }
+    i = i + 1;
+}
+show("Sum of even numbers from 1 to", n, "=", total);

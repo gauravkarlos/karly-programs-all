@@ -1,0 +1,11 @@
+## 63. Find factors of a number ##
+inte n = to_inte(input("Enter a number: "));
+auto factors = [];
+inte i = 1;
+while (i <= n) {
+    if (n % i == 0) {
+        append(factors, i);
+    }
+    i = i + 1;
+}
+show("Factors of", n, ":", factors);

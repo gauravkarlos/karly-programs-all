@@ -1,0 +1,4 @@
+## 79. Area of a parallelogram (area = base * height) ##
+dou base = to_dou(input("Enter base: "));
+dou height = to_dou(input("Enter height: "));
+show("Area of parallelogram:", base * height);

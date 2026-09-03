@@ -1,0 +1,3 @@
+## 73. Area of a square ##
+dou side = to_dou(input("Enter side length: "));
+show("Area of square:", side * side);

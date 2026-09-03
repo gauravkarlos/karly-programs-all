@@ -1,0 +1,15 @@
+## 74. Create a member function to reverse a number ##
+class MathHelper {
+    public:
+    fun reverse(inte n) -> inte {
+        inte reversed_num = 0;
+        while (n != 0) {
+            inte digit = n % 10;
+            reversed_num = reversed_num * 10 + digit;
+            n = to_inte(n / 10);
+        }
+        return reversed_num;
+    }
+}
+auto mh = new MathHelper();
+show("Reverse of 12345:", mh.reverse(12345));

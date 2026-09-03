@@ -1,0 +1,13 @@
+## 88. Overload a function to calculate different types of distances ##
+fun convert_distance(dou value, chr unit = "km") -> dou {
+    if (unit == "miles") {
+        return value * 0.621371;
+    }
+    if (unit == "meters") {
+        return value * 1000.0;
+    }
+    return value;
+}
+show("5 km in miles:", convert_distance(5.0, "miles"));
+show("5 km in meters:", convert_distance(5.0, "meters"));
+show("5 km as-is:", convert_distance(5.0));

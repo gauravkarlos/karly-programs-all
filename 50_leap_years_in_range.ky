@@ -1,0 +1,13 @@
+## Program 50: Leap Years in a Range ##
+inte start_year = to_inte(input("Enter start year: "));
+inte end_year = to_inte(input("Enter end year: "));
+
+show("Leap years between", start_year, "and", end_year, ":");
+inte year = start_year;
+while (year <= end_year) {
+    boole is_leap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+    if (is_leap) {
+        show(year);
+    }
+    year = year + 1;
+}

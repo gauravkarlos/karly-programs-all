@@ -1,0 +1,15 @@
+## 72. Create a member function to calculate factorial ##
+class MathHelper {
+    public:
+    fun factorial(inte n) -> inte {
+        inte result = 1;
+        inte i = 2;
+        while (i <= n) {
+            result = result * i;
+            i = i + 1;
+        }
+        return result;
+    }
+}
+auto mh = new MathHelper();
+show("5! =", mh.factorial(5));

@@ -1,0 +1,16 @@
+## 60. Create a product class with controlled price updates ##
+class Product {
+    private:
+        dou price;
+    public:
+    fun __init__(dou p) { this.price = p; }
+    fun apply_discount(dou percent) {
+        if (percent > 0.0 && percent <= 100.0) {
+            this.price = this.price - (this.price * percent / 100.0);
+        }
+    }
+    fun get_price() -> dou { return this.price; }
+}
+auto pr = new Product(1000.0);
+pr.apply_discount(20.0);
+show("Price after discount:", pr.get_price());

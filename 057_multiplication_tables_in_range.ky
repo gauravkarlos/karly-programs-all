@@ -1,0 +1,14 @@
+## 57. Generate multiplication tables in a range ##
+inte start_n = to_inte(input("Enter range start: "));
+inte end_n = to_inte(input("Enter range end: "));
+
+inte n = start_n;
+while (n <= end_n) {
+    show("Table of", n, ":");
+    inte i = 1;
+    while (i <= 10) {
+        show("  ", n, "x", i, "=", n * i);
+        i = i + 1;
+    }
+    n = n + 1;
+}
