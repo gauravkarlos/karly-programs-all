@@ -1,0 +1,30 @@
+## 34. Check Armstrong number (works for any number of digits) ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+
+inte digit_count = 0;
+inte temp = n;
+while (temp != 0) {
+    digit_count = digit_count + 1;
+    temp = to_inte(temp / 10);
+}
+
+inte total = 0;
+temp = n;
+while (temp != 0) {
+    inte digit = temp % 10;
+    inte power_val = 1;
+    inte i = 0;
+    while (i < digit_count) {
+        power_val = power_val * digit;
+        i = i + 1;
+    }
+    total = total + power_val;
+    temp = to_inte(temp / 10);
+}
+
+if (total == original) {
+    show(original, "is an Armstrong number");
+} el {
+    show(original, "is NOT an Armstrong number");
+}

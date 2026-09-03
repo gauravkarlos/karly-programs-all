@@ -1,0 +1,12 @@
+## 23. Store details of multiple books using objects ##
+class Book {
+    public:
+    chr title = "";
+    chr author = "";
+    fun __init__(chr t, chr a) { this.title = t; this.author = a; }
+    fun display() { show(this.title, "by", this.author); }
+}
+auto books = [new Book("Karly Basics", "Gaurav Roy"), new Book("Loops and Logic", "Anita Verma")];
+foreach (b in books) {
+    b.display();
+}

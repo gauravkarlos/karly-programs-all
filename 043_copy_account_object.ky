@@ -1,0 +1,17 @@
+## 43. Copy one account object into another ##
+class BankAccount {
+    public:
+    chr holder = "";
+    dou balance = 0.0;
+    fun __init__(chr h = "", dou b = 0.0) { this.holder = h; this.balance = b; }
+    fun copy_from(auto other) {
+        this.holder = other.holder;
+        this.balance = other.balance;
+    }
+}
+auto acc1 = new BankAccount("Divya", 20000.0);
+auto acc2 = new BankAccount();
+acc2.copy_from(acc1);
+acc2.balance = 5000.0;
+show("acc1.balance (unaffected):", acc1.balance);
+show("acc2.balance:", acc2.balance);

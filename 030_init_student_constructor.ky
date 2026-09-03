@@ -1,0 +1,9 @@
+## 30. Initialize student details using a constructor ##
+class Student {
+    public:
+    chr name = "";
+    inte roll_no = 0;
+    fun __init__(chr n, inte r) { this.name = n; this.roll_no = r; }
+}
+auto s = new Student("Meera", 12);
+show("Student:", s.name, s.roll_no);

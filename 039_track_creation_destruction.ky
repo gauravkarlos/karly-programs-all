@@ -1,0 +1,21 @@
+## 39. Track object creation and destruction ##
+inte active_objects = 0;
+
+class Task {
+    public:
+    chr name = "";
+    fun __init__(chr n) {
+        this.name = n;
+        active_objects = active_objects + 1;
+        show("Created task:", this.name, " (active:", active_objects, ")");
+    }
+    fun finish() {
+        active_objects = active_objects - 1;
+        show("Finished task:", this.name, " (active:", active_objects, ")");
+    }
+}
+
+auto t1 = new Task("Write report");
+auto t2 = new Task("Review code");
+t1.finish();
+t2.finish();

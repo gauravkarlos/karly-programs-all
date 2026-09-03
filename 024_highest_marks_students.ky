@@ -1,0 +1,16 @@
+## 24. Find the highest marks among multiple student objects ##
+class Student {
+    public:
+    chr name = "";
+    dou marks = 0.0;
+    fun __init__(chr n, dou m) { this.name = n; this.marks = m; }
+}
+auto students = [new Student("Aria", 88.0), new Student("Ben", 95.5), new Student("Chitra", 92.0)];
+
+auto topper = students[0];
+foreach (s in students) {
+    if (s.marks > topper.marks) {
+        topper = s;
+    }
+}
+show("Highest marks:", topper.name, "with", topper.marks);

@@ -1,0 +1,9 @@
+## 32. Initialize product details using a constructor ##
+class Product {
+    public:
+    chr name = "";
+    dou price = 0.0;
+    fun __init__(chr n, dou p) { this.name = n; this.price = p; }
+}
+auto pr = new Product("Desk Lamp", 899.0);
+show("Product:", pr.name, pr.price);

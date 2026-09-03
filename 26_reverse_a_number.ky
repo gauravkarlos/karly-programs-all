@@ -1,0 +1,10 @@
+## Program 26: Reverse a Number ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+inte reversed_num = 0;
+while (n != 0) {
+    inte digit = n % 10;
+    reversed_num = reversed_num * 10 + digit;
+    n = to_inte(n / 10);
+}
+show("Reverse of", original, "is", reversed_num);

@@ -1,0 +1,14 @@
+## Program 29: Armstrong Number (3-digit: sum of cubes of digits == number) ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+inte total = 0;
+while (n != 0) {
+    inte digit = n % 10;
+    total = total + (digit * digit * digit);
+    n = to_inte(n / 10);
+}
+if (total == original) {
+    show(original, "is an Armstrong number");
+} el {
+    show(original, "is NOT an Armstrong number");
+}

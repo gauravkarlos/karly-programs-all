@@ -1,0 +1,7 @@
+## Program 22: Multiplication Table ##
+inte n = to_inte(input("Enter a number: "));
+inte i = 1;
+while (i <= 10) {
+    show(n, "x", i, "=", n * i);
+    i = i + 1;
+}

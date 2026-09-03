@@ -1,0 +1,25 @@
+## 45. Check automorphic number (n^2 ends with n, e.g. 25 -> 625) ##
+inte n = to_inte(input("Enter a number: "));
+inte square = n * n;
+
+## count digits of n, then compare the last that-many digits of the square ##
+inte digit_count = 0;
+inte temp = n;
+while (temp != 0) {
+    digit_count = digit_count + 1;
+    temp = to_inte(temp / 10);
+}
+
+inte divisor = 1;
+inte i = 0;
+while (i < digit_count) {
+    divisor = divisor * 10;
+    i = i + 1;
+}
+
+inte last_digits = square % divisor;
+if (last_digits == n) {
+    show(n, "is an Automorphic number (square =", square, ")");
+} el {
+    show(n, "is NOT an Automorphic number (square =", square, ")");
+}

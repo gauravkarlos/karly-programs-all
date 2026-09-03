@@ -1,0 +1,11 @@
+## 26. Create a class using a default constructor ##
+class Counter {
+    public:
+    inte value = 0;
+    fun __init__() {
+        this.value = 0;
+        show("Default constructor called -- value initialized to 0");
+    }
+}
+auto c = new Counter();
+show("value:", c.value);

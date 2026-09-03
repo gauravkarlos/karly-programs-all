@@ -1,0 +1,14 @@
+## 28. Create a class with multiple constructors. Honesty note: Karly does not support true constructor overloading -- only one __init__ is ever active. Default parameter values are the idiomatic substitute, shown below. ##
+class Point {
+    public:
+    inte x = 0;
+    inte y = 0;
+    fun __init__(inte px = 0, inte py = 0) {
+        this.x = px;
+        this.y = py;
+    }
+}
+auto p1 = new Point();
+auto p2 = new Point(5, 9);
+show("p1:", p1.x, p1.y);
+show("p2:", p2.x, p2.y);

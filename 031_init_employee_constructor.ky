@@ -1,0 +1,9 @@
+## 31. Initialize employee details using a constructor ##
+class Employee {
+    public:
+    chr name = "";
+    dou salary = 0.0;
+    fun __init__(chr n, dou s) { this.name = n; this.salary = s; }
+}
+auto e = new Employee("Vikram", 47000.0);
+show("Employee:", e.name, e.salary);

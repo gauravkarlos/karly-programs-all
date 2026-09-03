@@ -1,0 +1,14 @@
+## 37. Count digits in a number ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+if (n < 0) { n = -n; }
+if (n == 0) {
+    show("Number of digits: 1");
+} el {
+    inte count = 0;
+    while (n != 0) {
+        count = count + 1;
+        n = to_inte(n / 10);
+    }
+    show("Number of digits in", original, ":", count);
+}

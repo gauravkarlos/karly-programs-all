@@ -1,0 +1,13 @@
+## Program 25: Fibonacci Sequence up to N terms ##
+show("Enter howmany terms")
+inte n = to_inte(input("-"));
+inte a = 0;
+inte b = 1;
+inte i = 0;
+while (i < n) {
+    show(a);
+    inte next_val = a + b;
+    a = b;
+    b = next_val;
+    i = i + 1;
+}

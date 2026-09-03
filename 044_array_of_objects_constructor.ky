@@ -1,0 +1,11 @@
+## 44. Initialize an array of objects using constructors ##
+class Item {
+    public:
+    chr name = "";
+    dou price = 0.0;
+    fun __init__(chr n, dou p) { this.name = n; this.price = p; }
+}
+auto items = [new Item("Pen", 10.0), new Item("Notebook", 45.0), new Item("Eraser", 5.0)];
+foreach (it in items) {
+    show(it.name, "-", it.price);
+}

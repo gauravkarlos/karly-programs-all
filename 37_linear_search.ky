@@ -1,0 +1,16 @@
+## Program 37: Linear Search ##
+auto numbers = [34, 12, 89, 5, 67, 23];
+inte target = to_inte(input("Enter number to search: "));
+inte found_index = -1;
+inte i = 0;
+while (i < len(numbers)) {
+    if (numbers[i] == target) {
+        found_index = i;
+    }
+    i = i + 1;
+}
+if (found_index != -1) {
+    show(target, "found at index", found_index);
+} el {
+    show(target, "not found in array");
+}

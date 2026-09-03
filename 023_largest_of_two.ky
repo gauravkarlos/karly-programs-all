@@ -1,0 +1,8 @@
+## 23. Find largest of two numbers ##
+dou a = to_dou(input("Enter first number: "));
+dou b = to_dou(input("Enter second number: "));
+if (a > b) {
+    show("Largest:", a);
+} el {
+    show("Largest:", b);
+}

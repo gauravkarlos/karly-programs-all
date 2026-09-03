@@ -1,0 +1,9 @@
+## 33. Initialize rectangle dimensions using a constructor ##
+class Rectangle {
+    public:
+    dou length = 0.0;
+    dou width = 0.0;
+    fun __init__(dou l, dou w) { this.length = l; this.width = w; }
+}
+auto r = new Rectangle(12.0, 7.0);
+show("Rectangle:", r.length, "x", r.width);

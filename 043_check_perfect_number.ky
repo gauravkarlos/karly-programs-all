@@ -1,0 +1,15 @@
+## 43. Check perfect number (sum of proper divisors == the number, e.g. 6, 28) ##
+inte n = to_inte(input("Enter a number: "));
+inte sum_divisors = 0;
+inte i = 1;
+while (i < n) {
+    if (n % i == 0) {
+        sum_divisors = sum_divisors + i;
+    }
+    i = i + 1;
+}
+if (sum_divisors == n && n > 0) {
+    show(n, "is a Perfect number");
+} el {
+    show(n, "is NOT a Perfect number");
+}

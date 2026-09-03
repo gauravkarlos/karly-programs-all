@@ -1,0 +1,12 @@
+## Program 33: Find Maximum Value in an Array ##
+auto numbers = [23, 67, 5, 89, 41];
+inte largest = numbers[0];
+inte i = 1;
+while (i < len(numbers)) {
+    if (numbers[i] > largest) {
+        largest = numbers[i];
+    }
+    i = i + 1;
+}
+show("Array:", numbers);
+show("Maximum:", largest);

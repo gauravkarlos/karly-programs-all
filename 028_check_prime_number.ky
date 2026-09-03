@@ -1,0 +1,19 @@
+## 28. Check prime number ##
+inte n = to_inte(input("Enter a number: "));
+boole is_prime = true;
+if (n < 2) {
+    is_prime = false;
+} el {
+    inte i = 2;
+    while (i * i <= n) {
+        if (n % i == 0) {
+            is_prime = false;
+        }
+        i = i + 1;
+    }
+}
+if (is_prime) {
+    show(n, "is Prime");
+} el {
+    show(n, "is NOT Prime");
+}

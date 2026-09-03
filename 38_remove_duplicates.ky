@@ -1,0 +1,21 @@
+## Program 38: Remove Duplicates from an Array ##
+auto numbers = [1, 3, 2, 3, 4, 1, 5, 2];
+show("Original:", numbers);
+
+auto unique = [];
+inte i = 0;
+while (i < len(numbers)) {
+    boole already_seen = false;
+    inte j = 0;
+    while (j < len(unique)) {
+        if (unique[j] == numbers[i]) {
+            already_seen = true;
+        }
+        j = j + 1;
+    }
+    if (!already_seen) {
+        append(unique, numbers[i]);
+    }
+    i = i + 1;
+}
+show("Without duplicates:", unique);

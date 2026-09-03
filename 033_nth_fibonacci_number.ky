@@ -1,0 +1,12 @@
+## 33. Find nth Fibonacci number (1st term = 0) ##
+inte n = to_inte(input("Enter n: "));
+inte a = 0;
+inte b = 1;
+inte i = 0;
+while (i < n) {
+    inte next_val = a + b;
+    a = b;
+    b = next_val;
+    i = i + 1;
+}
+show("The", n, "-th Fibonacci number is", a);

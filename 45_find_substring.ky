@@ -1,0 +1,26 @@
+## Program 45: Find Substring ##
+chr text = input("Enter the main string: ");
+chr pattern = input("Enter the substring to find: ");
+
+boole found = false;
+inte i = 0;
+while (i <= len(text) - len(pattern) && !found) {
+    boole matches = true;
+    inte j = 0;
+    while (j < len(pattern)) {
+        if (text[i + j] != pattern[j]) {
+            matches = false;
+        }
+        j = j + 1;
+    }
+    if (matches) {
+        found = true;
+    }
+    i = i + 1;
+}
+
+if (found) {
+    show("'" + pattern + "' was found inside '" + text + "'");
+} el {
+    show("'" + pattern + "' was NOT found inside '" + text + "'");
+}

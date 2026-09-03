@@ -1,0 +1,27 @@
+## 30. Count prime numbers in a range ##
+fun is_prime(inte n) -> boole {
+    if (n < 2) {
+        return false;
+    }
+    inte i = 2;
+    while (i * i <= n) {
+        if (n % i == 0) {
+            return false;
+        }
+        i = i + 1;
+    }
+    return true;
+}
+
+inte start_n = to_inte(input("Enter range start: "));
+inte end_n = to_inte(input("Enter range end: "));
+
+inte count = 0;
+inte n = start_n;
+while (n <= end_n) {
+    if (is_prime(n)) {
+        count = count + 1;
+    }
+    n = n + 1;
+}
+show("Number of primes between", start_n, "and", end_n, ":", count);

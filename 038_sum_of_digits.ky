@@ -1,0 +1,10 @@
+## 38. Find sum of digits ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+if (n < 0) { n = -n; }
+inte total = 0;
+while (n != 0) {
+    total = total + (n % 10);
+    n = to_inte(n / 10);
+}
+show("Sum of digits of", original, "=", total);

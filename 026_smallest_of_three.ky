@@ -1,0 +1,8 @@
+## 26. Find smallest of three numbers ##
+dou a = to_dou(input("Enter first number: "));
+dou b = to_dou(input("Enter second number: "));
+dou c = to_dou(input("Enter third number: "));
+dou smallest = a;
+if (b < smallest) { smallest = b; }
+if (c < smallest) { smallest = c; }
+show("Smallest:", smallest);

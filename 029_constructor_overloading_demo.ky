@@ -1,0 +1,15 @@
+## 29. Demonstrate constructor overloading. Karly has no overload resolution (verified directly: re-declaring a function under the same name just replaces the previous one). Default parameters are the practical substitute. ##
+class Rectangle {
+    public:
+    dou length = 1.0;
+    dou width = 1.0;
+    fun __init__(dou l = 1.0, dou w = 1.0) {
+        this.length = l;
+        this.width = w;
+    }
+    fun area() -> dou { return this.length * this.width; }
+}
+auto square_like = new Rectangle(4.0);
+auto rect = new Rectangle(4.0, 6.0);
+show("square_like area:", square_like.area());
+show("rect area:", rect.area());

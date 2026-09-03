@@ -1,0 +1,10 @@
+## Program 31: Sum of Array Elements ##
+auto numbers = [10, 20, 30, 40, 50];
+inte total = 0;
+inte i = 0;
+while (i < len(numbers)) {
+    total = total + numbers[i];
+    i = i + 1;
+}
+show("Array:", numbers);
+show("Sum:", total);

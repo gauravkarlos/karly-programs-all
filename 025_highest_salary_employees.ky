@@ -1,0 +1,16 @@
+## 25. Find the highest salary among multiple employee objects ##
+class Employee {
+    public:
+    chr name = "";
+    dou salary = 0.0;
+    fun __init__(chr n, dou s) { this.name = n; this.salary = s; }
+}
+auto employees = [new Employee("Neha", 55000.0), new Employee("Rohit", 62000.0), new Employee("Sana", 48000.0)];
+
+auto top_earner = employees[0];
+foreach (e in employees) {
+    if (e.salary > top_earner.salary) {
+        top_earner = e;
+    }
+}
+show("Highest salary:", top_earner.name, "earning", top_earner.salary);

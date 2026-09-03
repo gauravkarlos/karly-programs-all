@@ -1,0 +1,13 @@
+## 42. Find frequency of a digit in a number ##
+inte n = to_inte(input("Enter a number: "));
+inte target_digit = to_inte(input("Enter digit to search for: "));
+inte original = n;
+if (n < 0) { n = -n; }
+inte count = 0;
+while (n != 0) {
+    if (n % 10 == target_digit) {
+        count = count + 1;
+    }
+    n = to_inte(n / 10);
+}
+show("Digit", target_digit, "appears", count, "time(s) in", original);

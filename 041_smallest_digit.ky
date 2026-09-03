@@ -1,0 +1,13 @@
+## 41. Find smallest digit in a number ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+if (n < 0) { n = -n; }
+inte smallest = 9;
+while (n != 0) {
+    inte digit = n % 10;
+    if (digit < smallest) {
+        smallest = digit;
+    }
+    n = to_inte(n / 10);
+}
+show("Smallest digit in", original, "is", smallest);

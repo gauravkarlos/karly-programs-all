@@ -1,0 +1,17 @@
+## 41. Copy one student object into another ##
+class Student {
+    public:
+    chr name = "";
+    dou marks = 0.0;
+    fun __init__(chr n = "", dou m = 0.0) { this.name = n; this.marks = m; }
+    fun copy_from(auto other) {
+        this.name = other.name;
+        this.marks = other.marks;
+    }
+}
+auto s1 = new Student("Aria", 88.0);
+auto s2 = new Student();
+s2.copy_from(s1);
+s2.marks = 100.0;
+show("s1.marks (unaffected):", s1.marks);
+show("s2.marks:", s2.marks);

@@ -1,0 +1,24 @@
+## 44. Check strong number (sum of factorials of digits == the number, e.g. 145) ##
+fun factorial_of(inte x) -> inte {
+    inte result = 1;
+    inte i = 2;
+    while (i <= x) {
+        result = result * i;
+        i = i + 1;
+    }
+    return result;
+}
+
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+inte total = 0;
+while (n != 0) {
+    inte digit = n % 10;
+    total = total + factorial_of(digit);
+    n = to_inte(n / 10);
+}
+if (total == original) {
+    show(original, "is a Strong number");
+} el {
+    show(original, "is NOT a Strong number");
+}

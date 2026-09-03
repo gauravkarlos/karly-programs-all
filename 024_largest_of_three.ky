@@ -1,0 +1,11 @@
+## 24. Find largest of three numbers ##
+show("Enter first number: ")
+dou a = to_dou(input());
+show("Enter second number: ")
+dou b = to_dou(input());
+show("Enter third number: ")
+dou c = to_dou(input());
+dou largest = a;
+if (b > largest) { largest = b; }
+if (c > largest) { largest = c; }
+show("Largest:", largest);

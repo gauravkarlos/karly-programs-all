@@ -1,0 +1,5 @@
+## Program 44: String Concatenation ##
+chr first = input("Enter first string: ");
+chr second = input("Enter second string: ");
+chr combined = first + " " + second;
+show("Combined:", combined);

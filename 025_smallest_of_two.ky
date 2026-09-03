@@ -1,0 +1,8 @@
+## 25. Find smallest of two numbers ##
+dou a = to_dou(input("Enter first number: "));
+dou b = to_dou(input("Enter second number: "));
+if (a < b) {
+    show("Smallest:", a);
+} el {
+    show("Smallest:", b);
+}

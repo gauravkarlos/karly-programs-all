@@ -1,0 +1,20 @@
+## 40. Create an object using a copy constructor. Honesty note: plain assignment in Karly copies a REFERENCE, not the object's data (verified directly -- modifying the "copy" changes the original too). A real copy constructor is a method that copies field values one by one, shown below. ##
+class Point {
+    public:
+    inte x = 0;
+    inte y = 0;
+    fun __init__(inte px = 0, inte py = 0) {
+        this.x = px;
+        this.y = py;
+    }
+    fun copy_from(auto other) {
+        this.x = other.x;
+        this.y = other.y;
+    }
+}
+auto original = new Point(3, 4);
+auto copy = new Point();
+copy.copy_from(original);
+copy.x = 99;
+show("original.x (unaffected):", original.x);
+show("copy.x:", copy.x);

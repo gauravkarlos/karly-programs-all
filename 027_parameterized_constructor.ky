@@ -1,0 +1,11 @@
+## 27. Create a class using a parameterized constructor ##
+class Counter {
+    public:
+    inte value = 0;
+    fun __init__(inte start) {
+        this.value = start;
+        show("Parameterized constructor called -- value initialized to", start);
+    }
+}
+auto c = new Counter(50);
+show("value:", c.value);

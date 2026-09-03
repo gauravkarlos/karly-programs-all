@@ -1,0 +1,17 @@
+## 42. Copy one employee object into another ##
+class Employee {
+    public:
+    chr name = "";
+    dou salary = 0.0;
+    fun __init__(chr n = "", dou s = 0.0) { this.name = n; this.salary = s; }
+    fun copy_from(auto other) {
+        this.name = other.name;
+        this.salary = other.salary;
+    }
+}
+auto e1 = new Employee("Rohit", 62000.0);
+auto e2 = new Employee();
+e2.copy_from(e1);
+e2.salary = 70000.0;
+show("e1.salary (unaffected):", e1.salary);
+show("e2.salary:", e2.salary);

@@ -1,0 +1,9 @@
+## 31. Find factorial of a number ##
+inte n = to_inte(input("Enter a number: "));
+inte result = 1;
+inte i = 2;
+while (i <= n) {
+    result = result * i;
+    i = i + 1;
+}
+show("Factorial of", n, "=", result);

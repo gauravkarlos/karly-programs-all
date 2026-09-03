@@ -1,0 +1,9 @@
+## 37. Display a message when an object is created ##
+class Logger {
+    public:
+    fun __init__() {
+        show("[Logger] object created");
+    }
+}
+auto l1 = new Logger();
+auto l2 = new Logger();

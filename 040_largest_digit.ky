@@ -1,0 +1,13 @@
+## 40. Find largest digit in a number ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+if (n < 0) { n = -n; }
+inte largest = 0;
+while (n != 0) {
+    inte digit = n % 10;
+    if (digit > largest) {
+        largest = digit;
+    }
+    n = to_inte(n / 10);
+}
+show("Largest digit in", original, "is", largest);

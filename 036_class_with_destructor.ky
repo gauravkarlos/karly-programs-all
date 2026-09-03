@@ -1,0 +1,15 @@
+## 36. Create a class with a destructor. Honesty note: Karly's del does not automatically invoke __del__ (verified directly) -- there is no automatic RAII-style destructor call. The idiomatic pattern is an explicit cleanup() method, called manually before del. ##
+class FileHandle {
+    public:
+    chr name = "";
+    fun __init__(chr n) {
+        this.name = n;
+        show("Opened:", this.name);
+    }
+    fun cleanup() {
+        show("Closed:", this.name);
+    }
+}
+auto f = new FileHandle("report.txt");
+f.cleanup();
+del f;

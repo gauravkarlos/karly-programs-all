@@ -1,0 +1,10 @@
+## 39. Find product of digits ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+if (n < 0) { n = -n; }
+inte product = 1;
+while (n != 0) {
+    product = product * (n % 10);
+    n = to_inte(n / 10);
+}
+show("Product of digits of", original, "=", product);

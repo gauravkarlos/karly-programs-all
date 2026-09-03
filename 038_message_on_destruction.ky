@@ -1,0 +1,15 @@
+## 38. Display a message when an object is destroyed (via an explicit cleanup method -- see program 36 for why) ##
+class Session {
+    public:
+    chr id = "";
+    fun __init__(chr session_id) {
+        this.id = session_id;
+        show("[Session] started:", this.id);
+    }
+    fun end() {
+        show("[Session] ended:", this.id);
+    }
+}
+auto s = new Session("SESS-001");
+s.end();
+del s;

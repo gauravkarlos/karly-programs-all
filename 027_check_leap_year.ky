@@ -1,0 +1,8 @@
+## 27. Check leap year ##
+inte year = to_inte(input("Enter a year: "));
+boole is_leap = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
+if (is_leap) {
+    show(year, "is a leap year");
+} el {
+    show(year, "is not a leap year");
+}

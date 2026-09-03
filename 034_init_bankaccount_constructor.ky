@@ -1,0 +1,9 @@
+## 34. Initialize bank account details using a constructor ##
+class BankAccount {
+    public:
+    chr holder = "";
+    dou balance = 0.0;
+    fun __init__(chr h, dou b) { this.holder = h; this.balance = b; }
+}
+auto acc = new BankAccount("Divya", 20000.0);
+show("Account:", acc.holder, acc.balance);

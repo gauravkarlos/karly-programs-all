@@ -1,0 +1,14 @@
+## 35. Create objects using different constructors. Since Karly has one active __init__ per class, "different constructors" is achieved with default parameters. ##
+class Wallet {
+    public:
+    dou balance = 0.0;
+    chr owner = "unknown";
+    fun __init__(dou b = 0.0, chr o = "unknown") {
+        this.balance = b;
+        this.owner = o;
+    }
+}
+auto empty_wallet = new Wallet();
+auto named_wallet = new Wallet(500.0, "Tara");
+show("empty_wallet:", empty_wallet.owner, empty_wallet.balance);
+show("named_wallet:", named_wallet.owner, named_wallet.balance);

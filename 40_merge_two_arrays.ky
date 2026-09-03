@@ -1,0 +1,7 @@
+## Program 40: Merge Two Arrays ##
+auto first = [1, 2, 3];
+auto second = [4, 5, 6];
+auto merged = first + second;
+show("First:", first);
+show("Second:", second);
+show("Merged:", merged);

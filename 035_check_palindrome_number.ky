@@ -1,0 +1,14 @@
+## 35. Check palindrome number ##
+inte n = to_inte(input("Enter a number: "));
+inte original = n;
+inte reversed_num = 0;
+while (n != 0) {
+    inte digit = n % 10;
+    reversed_num = reversed_num * 10 + digit;
+    n = to_inte(n / 10);
+}
+if (original == reversed_num) {
+    show(original, "is a Palindrome");
+} el {
+    show(original, "is NOT a Palindrome");
+}
