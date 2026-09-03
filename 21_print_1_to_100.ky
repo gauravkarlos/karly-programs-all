@@ -1,0 +1,6 @@
+## Program 21: Print numbers from 1 to 100 ##
+inte i = 1;
+while (i <= 100) {
+    show(i);
+    i = i + 1;
+}

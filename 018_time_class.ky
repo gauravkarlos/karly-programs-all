@@ -1,0 +1,13 @@
+## 18. Create a Time class to store hours, minutes, and seconds ##
+class Time {
+    public:
+    inte hours = 0;
+    inte minutes = 0;
+    inte seconds = 0;
+    fun __init__(inte h, inte m, inte s) { this.hours = h; this.minutes = m; this.seconds = s; }
+    fun display() {
+        show(this.hours, ":", this.minutes, ":", this.seconds);
+    }
+}
+auto tm = new Time(14, 30, 45);
+tm.display();

@@ -1,0 +1,9 @@
+## 22. Check positive, negative or zero ##
+dou n = to_dou(input("Enter a number: "));
+if (n > 0) {
+    show(n, "is Positive");
+} elif (n < 0) {
+    show(n, "is Negative");
+} el {
+    show(n, "is Zero");
+}

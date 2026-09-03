@@ -1,0 +1,4 @@
+## 19. Convert meters to centimeters ##
+dou meters = to_dou(input("Enter distance in meters: "));
+dou cm = meters * 100.0;
+show(meters, "m =", cm, "cm");

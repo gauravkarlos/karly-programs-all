@@ -1,0 +1,14 @@
+## 21. Create multiple objects of a Student class ##
+class Student {
+    public:
+    chr name = "";
+    dou marks = 0.0;
+    fun __init__(chr n, dou m) { this.name = n; this.marks = m; }
+    fun display() { show(this.name, "-", this.marks); }
+}
+auto s1 = new Student("Aria", 88.0);
+auto s2 = new Student("Ben", 76.5);
+auto s3 = new Student("Chitra", 92.0);
+s1.display();
+s2.display();
+s3.display();

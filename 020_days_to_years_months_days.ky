@@ -1,0 +1,9 @@
+## 20. Convert days into years, months and days (1 year = 365 days, 1 month = 30 days) ##
+inte total_days = to_inte(input("Enter number of days: "));
+
+inte years = to_inte(total_days / 365);
+inte remaining_after_years = total_days % 365;
+inte months = to_inte(remaining_after_years / 30);
+inte days = remaining_after_years % 30;
+
+show(total_days, "days =", years, "year(s),", months, "month(s), and", days, "day(s)");

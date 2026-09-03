@@ -1,0 +1,13 @@
+## 19. Create a Date class to store day, month, and year ##
+class Date {
+    public:
+    inte day = 1;
+    inte month = 1;
+    inte year = 2000;
+    fun __init__(inte d, inte m, inte y) { this.day = d; this.month = m; this.year = y; }
+    fun display() {
+        show(this.day, "/", this.month, "/", this.year);
+    }
+}
+auto dt = new Date(15, 8, 2026);
+dt.display();

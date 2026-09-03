@@ -1,0 +1,7 @@
+## 21. Check even or odd ##
+inte n = to_inte(input("Enter a number: "));
+if (n % 2 == 0) {
+    show(n, "is Even");
+} el {
+    show(n, "is Odd");
+}

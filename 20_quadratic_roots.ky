@@ -1,0 +1,32 @@
+## Program 20: Quadratic Equation Roots (ax^2 + bx + c = 0) ##
+fun sqrt_approx(dou x) -> dou {
+    if (x <= 0) {
+        return 0.0;
+    }
+    dou guess = x;
+    inte i = 0;
+    while (i < 40) {
+        guess = (guess + x / guess) / 2.0;
+        i = i + 1;
+    }
+    return guess;
+}
+
+dou a = to_dou(input("Enter a: "));
+dou b = to_dou(input("Enter b: "));
+dou c = to_dou(input("Enter c: "));
+
+dou discriminant = b * b - 4.0 * a * c;
+
+if (discriminant > 0) {
+    dou root1 = (-b + sqrt_approx(discriminant)) / (2.0 * a);
+    dou root2 = (-b - sqrt_approx(discriminant)) / (2.0 * a);
+    show("Two real roots:", root1, "and", root2);
+} elif (discriminant == 0) {
+    dou root = -b / (2.0 * a);
+    show("One real root:", root);
+} el {
+    dou real_part = -b / (2.0 * a);
+    dou imag_part = sqrt_approx(-discriminant) / (2.0 * a);
+    show("Complex roots:", real_part, "+", imag_part, "i", "and", real_part, "-", imag_part, "i");
+}

@@ -1,0 +1,7 @@
+## Program 17: Voting Eligibility ##
+inte age = to_inte(input("Enter your age: "));
+if (age >= 18) {
+    show("You are eligible to vote.");
+} el {
+    show("You are NOT eligible to vote yet.");
+}

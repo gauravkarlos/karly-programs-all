@@ -1,0 +1,12 @@
+## 22. Store details of multiple employees using objects ##
+class Employee {
+    public:
+    chr name = "";
+    dou salary = 0.0;
+    fun __init__(chr n, dou s) { this.name = n; this.salary = s; }
+    fun display() { show(this.name, "-", this.salary); }
+}
+auto employees = [new Employee("Neha", 55000.0), new Employee("Rohit", 62000.0), new Employee("Sana", 48000.0)];
+foreach (emp in employees) {
+    emp.display();
+}

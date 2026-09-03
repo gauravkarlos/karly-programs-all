@@ -1,0 +1,8 @@
+## Program 18: Pass/Fail Evaluator ##
+dou score = to_dou(input("Enter your score (%): "));
+dou passing_mark = 40.0;
+if (score >= passing_mark) {
+    show("Result: Pass");
+} el {
+    show("Result: Fail");
+}

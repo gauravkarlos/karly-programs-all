@@ -1,0 +1,29 @@
+## Program 19: Basic Calculator ##
+dou a = to_dou(input("Enter first number: "));
+chr op = input("Enter operator (+, -, *, /): ");
+dou b = to_dou(input("Enter second number: "));
+
+dou result = 0.0;
+boole ok = true;
+
+if (op == "+") {
+    result = a + b;
+} elif (op == "-") {
+    result = a - b;
+} elif (op == "*") {
+    result = a * b;
+} elif (op == "/") {
+    if (b == 0) {
+        show("Error: division by zero");
+        ok = false;
+    } el {
+        result = a / b;
+    }
+} el {
+    show("Unknown operator:", op);
+    ok = false;
+}
+
+if (ok) {
+    show("Result:", result);
+}

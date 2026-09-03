@@ -1,0 +1,4 @@
+## 18. Convert kilometers to meters ##
+dou km = to_dou(input("Enter distance in kilometers: "));
+dou meters = km * 1000.0;
+show(km, "km =", meters, "meters");
