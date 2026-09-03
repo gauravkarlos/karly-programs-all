@@ -1,0 +1,26 @@
+## 122. Create an abstract Employee class with concrete FullTime and PartTime subclasses ##
+class Employee {
+    public:
+    chr name = "";
+    virtual fun pay() -> dou {
+        throw "Employee.pay() is abstract -- must be overridden";
+    }
+}
+class FullTimeEmployee extends Employee {
+    public:
+    dou monthly_salary = 0.0;
+    fun __init__(chr n, dou s) { this.name = n; this.monthly_salary = s; }
+    fun pay() -> dou { return this.monthly_salary; }
+}
+class PartTimeEmployee extends Employee {
+    public:
+    dou hourly_rate = 0.0;
+    dou hours = 0.0;
+    fun __init__(chr n, dou rate, dou h) { this.name = n; this.hourly_rate = rate; this.hours = h; }
+    fun pay() -> dou { return this.hourly_rate * this.hours; }
+}
+
+auto staff = [new FullTimeEmployee("Neha", 50000.0), new PartTimeEmployee("Sam", 300.0, 60.0)];
+foreach (person in staff) {
+    show(person.name, "gets paid:", person.pay());
+}

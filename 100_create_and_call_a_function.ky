@@ -1,0 +1,11 @@
+## 100. Create and call a function ##
+fun greet(chr name) -> chr {
+    return "Hello, " + name + "! Welcome to Karly.";
+}
+
+fun add_two_numbers(inte a, inte b) -> inte {
+    return a + b;
+}
+
+show(greet("World"));
+show("3 + 4 =", add_two_numbers(3, 4));

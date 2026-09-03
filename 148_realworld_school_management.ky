@@ -1,0 +1,27 @@
+## 148. Build a real-world school management mini-system using OOP ##
+class Student {
+    public:
+    chr name = "";
+    dou marks = 0.0;
+    fun __init__(chr n, dou m) { this.name = n; this.marks = m; }
+}
+class Classroom {
+    public:
+    chr grade = "";
+    auto students;
+    fun __init__(chr g) { this.grade = g; this.students = []; }
+    fun enroll(auto s) { append(this.students, s); }
+    fun class_average() -> dou {
+        dou total = 0.0;
+        foreach (s in this.students) {
+            total = total + s.marks;
+        }
+        if (len(this.students) == 0) { return 0.0; }
+        return total / to_dou(len(this.students));
+    }
+}
+auto grade5 = new Classroom("Grade 5");
+grade5.enroll(new Student("Aria", 88.0));
+grade5.enroll(new Student("Ben", 76.0));
+grade5.enroll(new Student("Chitra", 92.0));
+show(grade5.grade, "average:", grade5.class_average());

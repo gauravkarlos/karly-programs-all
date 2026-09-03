@@ -1,0 +1,23 @@
+## 96. Demonstrate single inheritance using Person and Student classes ##
+class Person {
+    public:
+    chr name = "";
+    fun __init__(chr n) { this.name = n; }
+    fun introduce() {
+        show("I am", this.name);
+    }
+}
+class Student extends Person {
+    public:
+    inte roll_no = 0;
+    fun __init__(chr n, inte r) {
+        this.name = n;
+        this.roll_no = r;
+    }
+    fun show_roll() {
+        show(this.name, "has roll number", this.roll_no);
+    }
+}
+auto s = new Student("Aria", 12);
+s.introduce();
+s.show_roll();

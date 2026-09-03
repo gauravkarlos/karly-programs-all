@@ -1,0 +1,58 @@
+## Karly Multiple Assignment -- "a, b = 1, 2;" style assignment, working across every data type. Every value on the right is evaluated BEFORE any target is written, which is what makes the classic swap idiom (a, b = b, a;) work correctly instead of clobbering "a" before "b"'s old value has been read. ##
+
+## ---- 1. The classic swap -- no temporary variable needed ---- ##
+inte x = 10;
+inte y = 20;
+show("Before swap:", x, y);
+x, y = y, x;
+show("After swap: ", x, y);
+
+## ---- 2. Assigning several variables at once ---- ##
+name, age, city = "Karly", 5, "the IDE";
+show(name, "is", age, "years old and lives in", city);
+
+## ---- 3. Unpacking a single list into separate variables ---- ##
+auto coordinates = [12, 34];
+px, py = coordinates;
+show("x =", px, " y =", py);
+
+## ---- 4. Unpacking a tuple ---- ##
+auto point3d = (1, 2, 3);
+tx, ty, tz = point3d;
+show("3D point:", tx, ty, tz);
+
+## ---- 5. Multiple assignment across EVERY data type at once ---- ##
+n, f, s, b, lst, tup, dct, st = 42, 3.14, "text", true, [1, 2, 3], (4, 5), {"key": "value"}, set(7, 8, 9);
+show("inte:", n);
+show("dou: ", f);
+show("chr: ", s);
+show("boole:", b);
+show("List: ", lst);
+show("Tuple:", tup);
+show("Dict: ", dct);
+show("Set:  ", st);
+
+## ---- 6. Using multiple assignment inside a loop -- running min/max tracking ---- ##
+auto readings = [5, 12, 3, 19, 8];
+lo, hi = readings[0], readings[0];
+foreach (v in readings) {
+    if (v < lo) { lo = v; }
+    if (v > hi) { hi = v; }
+}
+show("Lowest:", lo, " Highest:", hi);
+
+## ---- 7. Swapping fields between two objects ---- ##
+class Player {
+    public:
+    chr name;
+    inte score;
+    fun __init__(chr n, inte s) {
+        this.name = n;
+        this.score = s;
+    }
+}
+auto p1 = new Player("Alice", 90);
+auto p2 = new Player("Bob", 75);
+show("Before:", p1.name, p1.score, "|", p2.name, p2.score);
+p1.score, p2.score = p2.score, p1.score;
+show("After scores swapped:", p1.name, p1.score, "|", p2.name, p2.score);

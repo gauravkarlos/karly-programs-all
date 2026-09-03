@@ -1,0 +1,47 @@
+## 150. Build a real-world employee payroll mini-system using OOP, tying together classes, inheritance, encapsulation, and polymorphism ##
+class Employee {
+    public:
+    chr name = "";
+    priblock:
+        dou basic_salary;
+    public:
+    fun __init__(chr n, dou b) {
+        this.name = n;
+        this.basic_salary = b;
+    }
+    virtual fun net_pay() -> dou {
+        return this.basic_salary;
+    }
+}
+class Manager extends Employee {
+    public:
+    dou leadership_bonus = 0.0;
+    fun __init__(chr n, dou b, dou bonus) {
+        this.name = n;
+        this.basic_salary = b;
+        this.leadership_bonus = bonus;
+    }
+    fun net_pay() -> dou {
+        return this.basic_salary + this.leadership_bonus;
+    }
+}
+class Payroll {
+    public:
+    auto staff;
+    fun __init__() { this.staff = []; }
+    fun add_employee(auto e) { append(this.staff, e); }
+    fun total_payroll() -> dou {
+        dou total = 0.0;
+        foreach (e in this.staff) {
+            total = total + e.net_pay();
+        }
+        return total;
+    }
+}
+auto payroll = new Payroll();
+payroll.add_employee(new Employee("Neha", 40000.0));
+payroll.add_employee(new Manager("Vikram", 60000.0, 15000.0));
+foreach (e in payroll.staff) {
+    show(e.name, "net pay:", e.net_pay());
+}
+show("Total monthly payroll:", payroll.total_payroll());

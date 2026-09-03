@@ -1,0 +1,19 @@
+## 117. Demonstrate method overriding with Animal and Dog classes ##
+class Animal {
+    public:
+    virtual fun sound() -> chr { return "..."; }
+}
+class Dog extends Animal {
+    public:
+    fun sound() -> chr { return "Woof!"; }
+}
+class Cat extends Animal {
+    public:
+    fun sound() -> chr { return "Meow!"; }
+}
+auto a = new Animal();
+auto d = new Dog();
+auto c = new Cat();
+show("Generic animal:", a.sound());
+show("Dog:", d.sound());
+show("Cat:", c.sound());

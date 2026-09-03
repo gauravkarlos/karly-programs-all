@@ -1,0 +1,25 @@
+## 107. Create a Person -> Student -> GraduateStudent hierarchy ##
+class Person {
+    public:
+    chr name = "";
+    fun __init__(chr n) { this.name = n; }
+}
+class Student extends Person {
+    public:
+    chr major = "";
+    fun __init__(chr n, chr m) { this.name = n; this.major = m; }
+}
+class GraduateStudent extends Student {
+    public:
+    chr thesis_title = "";
+    fun __init__(chr n, chr m, chr thesis) {
+        this.name = n;
+        this.major = m;
+        this.thesis_title = thesis;
+    }
+    fun display() {
+        show(this.name, "-", this.major, "- thesis:", this.thesis_title);
+    }
+}
+auto gs = new GraduateStudent("Meera", "Computer Science", "Karly Language Design");
+gs.display();

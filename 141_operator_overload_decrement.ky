@@ -1,0 +1,13 @@
+## 141. Overload the -- operator to decrement an object's value (via an explicit method -- see program 136's note on why Karly needs .decrement() instead of a real -- operator on objects) ##
+class Counter {
+    public:
+    inte value = 0;
+    fun __init__(inte v) { this.value = v; }
+    fun decrement() {
+        this.value = this.value - 1;
+    }
+}
+auto c = new Counter(10);
+c.decrement();
+c.decrement();
+show("Counter value:", c.value);

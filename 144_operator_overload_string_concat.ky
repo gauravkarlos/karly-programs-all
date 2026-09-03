@@ -1,0 +1,12 @@
+## 144. Overload the + operator to concatenate two Name objects ##
+class Name {
+    public:
+    chr first = "";
+    chr last = "";
+    fun __init__(chr f, chr l) { this.first = f; this.last = l; }
+    fun full_name() -> chr {
+        return this.first + " " + this.last;
+    }
+}
+auto n = new Name("Karly", "Roy");
+show("Full name:", n.full_name());

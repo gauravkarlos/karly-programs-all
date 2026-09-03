@@ -1,0 +1,15 @@
+## 138. Overload the + operator to add two vectors ##
+class Vector2D {
+    public:
+    dou x = 0.0;
+    dou y = 0.0;
+    fun __init__(dou vx, dou vy) { this.x = vx; this.y = vy; }
+    fun add(auto other) -> auto {
+        return new Vector2D(this.x + other.x, this.y + other.y);
+    }
+    fun display() { show("(", this.x, ",", this.y, ")"); }
+}
+auto v1 = new Vector2D(2.0, 3.0);
+auto v2 = new Vector2D(4.0, 1.0);
+auto result = v1.add(v2);
+result.display();

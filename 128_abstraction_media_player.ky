@@ -1,0 +1,23 @@
+## 128. Use abstraction to model different types of media playback ##
+class Media {
+    public:
+    virtual fun play() -> chr {
+        throw "Media.play() must be overridden";
+    }
+}
+class Song extends Media {
+    public:
+    chr title = "";
+    fun __init__(chr t) { this.title = t; }
+    fun play() -> chr { return "Playing song: " + this.title; }
+}
+class Video extends Media {
+    public:
+    chr title = "";
+    fun __init__(chr t) { this.title = t; }
+    fun play() -> chr { return "Playing video: " + this.title; }
+}
+auto playlist = [new Song("Karly Anthem"), new Video("Language Tour")];
+foreach (item in playlist) {
+    show(item.play());
+}

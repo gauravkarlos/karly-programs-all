@@ -1,0 +1,19 @@
+## 95. Overload a function to convert between different units ##
+fun convert_temperature(dou value, chr from_unit, chr to_unit) -> dou {
+    dou celsius = value;
+    if (from_unit == "F") {
+        celsius = (value - 32.0) * 5.0 / 9.0;
+    } elif (from_unit == "K") {
+        celsius = value - 273.15;
+    }
+    if (to_unit == "F") {
+        return (celsius * 9.0 / 5.0) + 32.0;
+    }
+    if (to_unit == "K") {
+        return celsius + 273.15;
+    }
+    return celsius;
+}
+show("100 C to F:", convert_temperature(100.0, "C", "F"));
+show("98.6 F to C:", convert_temperature(98.6, "F", "C"));
+show("0 C to K:", convert_temperature(0.0, "C", "K"));

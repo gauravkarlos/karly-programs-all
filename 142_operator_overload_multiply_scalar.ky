@@ -1,0 +1,16 @@
+## 142. Overload the * operator to multiply a vector by a scalar ##
+class Vector2D {
+    public:
+    dou x = 0.0;
+    dou y = 0.0;
+    fun __init__(dou vx, dou vy) { this.x = vx; this.y = vy; }
+    fun scale(dou factor) -> auto {
+        return new Vector2D(this.x * factor, this.y * factor);
+    }
+    fun display() {
+        show("(", this.x, ",", this.y, ")");
+    }
+}
+auto v = new Vector2D(2.0, 3.0);
+auto scaled = v.scale(4.0);
+scaled.display();

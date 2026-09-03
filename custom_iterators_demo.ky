@@ -1,0 +1,97 @@
+## Karly Custom Iterators -- a class opts into "foreach (x in obj) { }" support by defining two methods: __has_next__() -> boole and __next__() -> auto. Optionally, __iter__() can hand back a DIFFERENT object to actually walk over, which is what makes the same source object re-iterable more than once (see FibonacciSeries below). ##
+
+## ---- 1. A simple custom iterator: counts down from N to 1 ---- ##
+class Countdown {
+    private:
+    inte current;
+
+    public:
+    fun __init__(inte start) {
+        this.current = start;
+    }
+    fun __has_next__() -> boole {
+        return this.current > 0;
+    }
+    fun __next__() -> inte {
+        inte value = this.current;
+        this.current = this.current - 1;
+        return value;
+    }
+}
+
+show("-- Countdown --");
+foreach (n in new Countdown(5)) {
+    show(n);
+}
+
+## ---- 2. A more useful custom iterator: the first N Fibonacci numbers ---- ##
+class FibonacciCursor {
+    private:
+    inte a;
+    inte b;
+    inte remaining;
+
+    public:
+    fun __init__(inte count) {
+        this.a = 0;
+        this.b = 1;
+        this.remaining = count;
+    }
+    fun __has_next__() -> boole {
+        return this.remaining > 0;
+    }
+    fun __next__() -> inte {
+        inte value = this.a;
+        inte next_val = this.a + this.b;
+        this.a = this.b;
+        this.b = next_val;
+        this.remaining = this.remaining - 1;
+        return value;
+    }
+}
+
+show("-- First 8 Fibonacci numbers --");
+foreach (f in new FibonacciCursor(8)) {
+    show(f);
+}
+
+## ---- 3. Re-iterable custom iterable, using __iter__() to hand back a fresh cursor each time ---- ##
+class FibonacciSeries {
+    private:
+    inte count;
+
+    public:
+    fun __init__(inte n) {
+        this.count = n;
+    }
+    fun __iter__() -> auto {
+        return new FibonacciCursor(this.count);
+    }
+}
+
+auto series = new FibonacciSeries(5);
+show("-- First pass over the same series --");
+foreach (f in series) {
+    show(f);
+}
+show("-- Second pass over the SAME series object --");
+foreach (f in series) {
+    show(f);
+}
+
+## ---- 4. Using a custom iterator inside ordinary logic (sum the countdown) ---- ##
+inte total = 0;
+foreach (n in new Countdown(10)) {
+    total = total + n;
+}
+show("Sum of countdown from 10:", total);
+
+## ---- 5. A non-iterable object gives a clean, catchable error, not a crash ---- ##
+class PlainObject { }
+try {
+    foreach (x in new PlainObject()) {
+        show(x);
+    }
+} catch (e) {
+    show("caught:", e);
+}

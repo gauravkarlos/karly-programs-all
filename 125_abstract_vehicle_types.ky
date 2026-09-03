@@ -1,0 +1,22 @@
+## 125. Create an abstract Vehicle class with Car and Bike implementations ##
+class Vehicle {
+    public:
+    virtual fun wheels() -> inte {
+        throw "Vehicle.wheels() must be overridden";
+    }
+    fun describe() {
+        show("This vehicle has", this.wheels(), "wheels");
+    }
+}
+class Car extends Vehicle {
+    public:
+    fun wheels() -> inte { return 4; }
+}
+class Bike extends Vehicle {
+    public:
+    fun wheels() -> inte { return 2; }
+}
+auto c = new Car();
+auto b = new Bike();
+c.describe();
+b.describe();

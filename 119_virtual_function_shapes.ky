@@ -1,0 +1,28 @@
+## 119. Use virtual functions to compute area of different shapes ##
+class Shape {
+    public:
+    virtual fun area() -> dou { return 0.0; }
+    virtual fun name() -> chr { return "Shape"; }
+}
+class Rectangle extends Shape {
+    public:
+    dou length = 0.0;
+    dou width = 0.0;
+    fun __init__(dou l, dou w) { this.length = l; this.width = w; }
+    fun area() -> dou { return this.length * this.width; }
+    fun name() -> chr { return "Rectangle"; }
+}
+class Triangle extends Shape {
+    public:
+    dou base = 0.0;
+    dou height = 0.0;
+    fun __init__(dou b, dou h) { this.base = b; this.height = h; }
+    fun area() -> dou { return 0.5 * this.base * this.height; }
+    fun name() -> chr { return "Triangle"; }
+}
+
+fun report(auto shape) {
+    show(shape.name(), "area:", shape.area());
+}
+report(new Rectangle(5.0, 3.0));
+report(new Triangle(6.0, 4.0));

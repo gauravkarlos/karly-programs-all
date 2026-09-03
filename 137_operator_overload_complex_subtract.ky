@@ -1,0 +1,15 @@
+## 137. Overload the - operator to subtract two complex numbers (via an explicit method -- see program 136's note) ##
+class Complex {
+    public:
+    dou real = 0.0;
+    dou imag = 0.0;
+    fun __init__(dou r, dou i) { this.real = r; this.imag = i; }
+    fun subtract(auto other) -> auto {
+        return new Complex(this.real - other.real, this.imag - other.imag);
+    }
+    fun display() { show(this.real, "+", this.imag, "i"); }
+}
+auto c1 = new Complex(5.0, 6.0);
+auto c2 = new Complex(2.0, 3.0);
+auto diff = c1.subtract(c2);
+diff.display();

@@ -1,0 +1,12 @@
+## 143. Overload comparison operators to compare two objects ##
+class Money {
+    public:
+    dou amount = 0.0;
+    fun __init__(dou a) { this.amount = a; }
+    fun greater_than(auto other) -> boole { return this.amount > other.amount; }
+    fun less_than(auto other) -> boole { return this.amount < other.amount; }
+}
+auto m1 = new Money(500.0);
+auto m2 = new Money(300.0);
+show("m1 > m2:", m1.greater_than(m2));
+show("m1 < m2:", m1.less_than(m2));

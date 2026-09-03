@@ -1,0 +1,23 @@
+## 121. Create an abstract class Shape and derive concrete shape classes. Honesty note: Karly has no abstract/pure-virtual keyword. The idiomatic simulation, shown below, is a virtual base method that raises a clear error if a subclass forgets to override it -- "abstract by convention, enforced at call time" rather than at compile time. ##
+class Shape {
+    public:
+    virtual fun area() -> dou {
+        throw "Shape.area() is abstract -- every subclass must override it";
+    }
+}
+class Circle extends Shape {
+    public:
+    dou radius = 0.0;
+    fun __init__(dou r) { this.radius = r; }
+    fun area() -> dou { return 3.14159 * this.radius * this.radius; }
+}
+
+auto c = new Circle(5.0);
+show("Circle area:", c.area());
+
+try {
+    auto generic_shape = new Shape();
+    show(generic_shape.area());
+} catch (e) {
+    show("Calling the abstract method directly correctly fails:", e);
+}

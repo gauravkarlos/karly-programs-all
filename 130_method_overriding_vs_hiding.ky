@@ -1,0 +1,13 @@
+## 130. Demonstrate the difference between overriding a method and adding a new one ##
+class Base {
+    public:
+    virtual fun greet() -> chr { return "Hello from Base"; }
+    fun base_only() -> chr { return "Only Base has this"; }
+}
+class Derived extends Base {
+    public:
+    fun greet() -> chr { return "Hello from Derived (overridden)"; }
+}
+auto d = new Derived();
+show(d.greet());
+show(d.base_only());

@@ -1,0 +1,20 @@
+## 120. Demonstrate polymorphism using different animal sounds ##
+class Animal {
+    public:
+    chr name = "";
+    virtual fun make_sound() -> chr { return this.name + " makes a sound"; }
+}
+class Cow extends Animal {
+    public:
+    fun make_sound() -> chr { return this.name + " moos"; }
+}
+class Lion extends Animal {
+    public:
+    fun make_sound() -> chr { return this.name + " roars"; }
+}
+auto animals = [new Cow(), new Lion()];
+animals[0].name = "Bessie";
+animals[1].name = "Leo";
+foreach (a in animals) {
+    show(a.make_sound());
+}

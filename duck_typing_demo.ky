@@ -1,0 +1,82 @@
+## Karly Duck Typing -- "if it walks like a duck and quacks like a duck..." Karly is already dynamically typed (no runtime type enforcement), and these builtins make that explicit and checkable: has_method(), has_field(), has_attr(), and call_if_has() let code ask "can you do X?" instead of "are you a Y?", without needing any shared base class or interface. ##
+
+## Several completely unrelated classes, sharing no inheritance, but a few of them happen to define the same method name. ##
+class Duck {
+    public:
+    fun speak() -> chr { return "Quack!"; }
+}
+
+class Dog {
+    public:
+    fun speak() -> chr { return "Woof!"; }
+}
+
+class RobotDuck {
+    public:
+    chr sound = "Beep-Quack!";
+    fun speak() -> chr { return this.sound; }
+}
+
+class Rock {
+    ## no speak() method at all ##
+}
+
+## ---- 1. has_method(): check a capability before using it ---- ##
+fun make_it_speak(auto thing) {
+    if (has_method(thing, "speak")) {
+        show(thing.speak());
+    } el {
+        show("(this thing stays silent)");
+    }
+}
+
+make_it_speak(new Duck());
+make_it_speak(new Dog());
+make_it_speak(new RobotDuck());
+make_it_speak(new Rock());
+
+## ---- 2. Duck typing over a whole list of unrelated objects ---- ##
+auto zoo = [new Duck(), new Rock(), new Dog(), new RobotDuck()];
+inte speaking_count = 0;
+foreach (creature in zoo) {
+    if (has_method(creature, "speak")) {
+        speaking_count = speaking_count + 1;
+    }
+}
+show("Creatures that can speak:", speaking_count, "out of", len(zoo));
+
+## ---- 3. call_if_has(): call a method only if it exists, no try/catch needed ---- ##
+show("call_if_has on Duck:", call_if_has(new Duck(), "speak"));
+show("call_if_has on Rock:", call_if_has(new Rock(), "speak"));
+
+## ---- 4. has_field() / has_attr(): the same idea for data members ---- ##
+class Wallet {
+    public:
+    dou balance = 250.0;
+}
+class Empty { }
+
+auto w = new Wallet();
+auto e = new Empty();
+show("Wallet has_field balance:", has_field(w, "balance"));
+show("Empty has_field balance:", has_field(e, "balance"));
+show("Wallet has_attr balance:", has_attr(w, "balance"));
+show("RobotDuck has_attr sound:", has_attr(new RobotDuck(), "sound"));
+
+## ---- 5. Putting it together: a duck-typed "total up anything with a balance" helper ---- ##
+class SavingsAccount { public: dou balance = 500.0; }
+class CheckingAccount { public: dou balance = 120.0; }
+class Note { public: chr text = "not an account"; }
+
+fun total_balance(auto accounts) -> dou {
+    dou total = 0.0;
+    foreach (acc in accounts) {
+        if (has_field(acc, "balance")) {
+            total = total + acc.balance;
+        }
+    }
+    return total;
+}
+
+auto mixed = [new SavingsAccount(), new CheckingAccount(), new Note()];
+show("Total balance across mixed objects:", total_balance(mixed));

@@ -1,0 +1,25 @@
+## 108. Create a Person -> Employee -> Manager hierarchy ##
+class Person {
+    public:
+    chr name = "";
+    fun __init__(chr n) { this.name = n; }
+}
+class Employee extends Person {
+    public:
+    dou salary = 0.0;
+    fun __init__(chr n, dou s) { this.name = n; this.salary = s; }
+}
+class Manager extends Employee {
+    public:
+    inte team_size = 0;
+    fun __init__(chr n, dou s, inte t) {
+        this.name = n;
+        this.salary = s;
+        this.team_size = t;
+    }
+    fun display() {
+        show(this.name, "manages", this.team_size, "people, earning", this.salary);
+    }
+}
+auto m = new Manager("Divya", 95000.0, 12);
+m.display();

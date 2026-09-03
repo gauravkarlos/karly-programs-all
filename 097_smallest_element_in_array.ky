@@ -1,0 +1,12 @@
+## 97. Find smallest element in an array ##
+auto numbers = [45, 12, 89, 3, 67, 29];
+inte smallest = numbers[0];
+inte i = 1;
+while (i < len(numbers)) {
+    if (numbers[i] < smallest) {
+        smallest = numbers[i];
+    }
+    i = i + 1;
+}
+show("Array:", numbers);
+show("Smallest element:", smallest);

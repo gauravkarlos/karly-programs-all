@@ -1,0 +1,23 @@
+## 100. Demonstrate hybrid inheritance (a mix of single-chain extends plus composition, since Karly has no true multiple inheritance -- see program 99) ##
+class LivingBeing {
+    public:
+    chr name = "";
+    fun __init__(chr n) { this.name = n; }
+}
+class Flyer {
+    public:
+    fun fly() -> chr { return "flying"; }
+}
+class Bird extends LivingBeing {
+    public:
+    auto flyer;
+    fun __init__(chr n) {
+        this.name = n;
+        this.flyer = new Flyer();
+    }
+    fun describe() {
+        show(this.name, "is", this.flyer.fly());
+    }
+}
+auto sparrow = new Bird("Sparrow");
+sparrow.describe();

@@ -1,0 +1,21 @@
+## 98. Demonstrate hierarchical inheritance -- multiple classes extending one base ##
+class Vehicle {
+    public:
+    chr name = "";
+    fun __init__(chr n) { this.name = n; }
+    fun describe() { show(this.name, "is a vehicle"); }
+}
+class Car extends Vehicle {
+    public:
+    fun wheels() -> inte { return 4; }
+}
+class Bike extends Vehicle {
+    public:
+    fun wheels() -> inte { return 2; }
+}
+auto c = new Car("Sedan");
+auto b = new Bike("Scooter");
+c.describe();
+show(c.name, "has", c.wheels(), "wheels");
+b.describe();
+show(b.name, "has", b.wheels(), "wheels");

@@ -1,0 +1,22 @@
+## 116. Demonstrate runtime polymorphism using shape classes ##
+class Shape {
+    public:
+    virtual fun area() -> dou { return 0.0; }
+}
+class Circle extends Shape {
+    public:
+    dou radius = 0.0;
+    fun __init__(dou r) { this.radius = r; }
+    fun area() -> dou { return 3.14159 * this.radius * this.radius; }
+}
+class Square extends Shape {
+    public:
+    dou side = 0.0;
+    fun __init__(dou s) { this.side = s; }
+    fun area() -> dou { return this.side * this.side; }
+}
+
+auto shapes = [new Circle(3.0), new Square(4.0)];
+foreach (s in shapes) {
+    show("Area:", s.area());
+}

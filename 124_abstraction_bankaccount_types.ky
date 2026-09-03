@@ -1,0 +1,23 @@
+## 124. Use abstraction to model different types of bank accounts uniformly ##
+class Account {
+    public:
+    dou balance = 0.0;
+    virtual fun account_type() -> chr {
+        throw "Account.account_type() must be overridden";
+    }
+}
+class Checking extends Account {
+    public:
+    fun account_type() -> chr { return "Checking"; }
+}
+class Savings extends Account {
+    public:
+    fun account_type() -> chr { return "Savings"; }
+}
+
+auto accounts = [new Checking(), new Savings()];
+accounts[0].balance = 2000.0;
+accounts[1].balance = 8000.0;
+foreach (acc in accounts) {
+    show(acc.account_type(), "account balance:", acc.balance);
+}

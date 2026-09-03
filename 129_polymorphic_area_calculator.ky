@@ -1,0 +1,15 @@
+## 129. Build a polymorphic area calculator that works with any shape object ##
+class Circle { public: dou radius = 0.0; fun __init__(dou r) { this.radius = r; } fun area() -> dou { return 3.14159 * this.radius * this.radius; } }
+class Square { public: dou side = 0.0; fun __init__(dou s) { this.side = s; } fun area() -> dou { return this.side * this.side; } }
+class Triangle { public: dou base = 0.0; dou height = 0.0; fun __init__(dou b, dou h) { this.base = b; this.height = h; } fun area() -> dou { return 0.5 * this.base * this.height; } }
+
+fun total_area(auto shapes) -> dou {
+    dou sum = 0.0;
+    foreach (s in shapes) {
+        sum = sum + s.area();
+    }
+    return sum;
+}
+
+auto all_shapes = [new Circle(2.0), new Square(3.0), new Triangle(4.0, 5.0)];
+show("Combined area of all shapes:", total_area(all_shapes));

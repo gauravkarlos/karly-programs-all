@@ -1,0 +1,23 @@
+## 115. Model a school system with a Person base class and Teacher and Student derived classes ##
+class Person {
+    public:
+    chr name = "";
+    fun __init__(chr n) { this.name = n; }
+}
+class Teacher extends Person {
+    public:
+    chr subject = "";
+    fun __init__(chr n, chr subj) { this.name = n; this.subject = subj; }
+    fun role() -> chr { return this.name + " teaches " + this.subject; }
+}
+class Student extends Person {
+    public:
+    inte grade = 0;
+    fun __init__(chr n, inte g) { this.name = n; this.grade = g; }
+    fun role() -> chr { return this.name + " is in grade " + to_str(this.grade); }
+}
+
+auto school = [new Teacher("Ms. Rao", "Mathematics"), new Student("Aria", 10), new Student("Ben", 9)];
+foreach (person in school) {
+    show(person.role());
+}

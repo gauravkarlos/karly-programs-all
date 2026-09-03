@@ -1,0 +1,27 @@
+## 134. Model game characters polymorphically with a shared attack() method ##
+class Character {
+    public:
+    chr name = "";
+    virtual fun attack() -> chr { return this.name + " does nothing special"; }
+}
+class Warrior extends Character {
+    public:
+    fun attack() -> chr { return this.name + " swings a sword!"; }
+}
+class Mage extends Character {
+    public:
+    fun attack() -> chr { return this.name + " casts a fireball!"; }
+}
+class Archer extends Character {
+    public:
+    fun attack() -> chr { return this.name + " shoots an arrow!"; }
+}
+
+auto party = [new Warrior(), new Mage(), new Archer()];
+auto names = ["Conan", "Merlin", "Legolas"];
+inte i = 0;
+foreach (member in party) {
+    member.name = names[i];
+    show(member.attack());
+    i = i + 1;
+}

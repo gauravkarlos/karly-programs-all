@@ -1,0 +1,24 @@
+## 132. Calculate bonuses polymorphically for different employee types ##
+class Employee {
+    public:
+    chr name = "";
+    dou base_salary = 0.0;
+    virtual fun bonus() -> dou { return this.base_salary * 0.05; }
+}
+class SalesEmployee extends Employee {
+    public:
+    fun bonus() -> dou { return this.base_salary * 0.15; }
+}
+class Manager extends Employee {
+    public:
+    fun bonus() -> dou { return this.base_salary * 0.25; }
+}
+
+auto staff = [new Employee(), new SalesEmployee(), new Manager()];
+auto names = ["Generic Employee", "Sales Rep", "Manager"];
+inte i = 0;
+foreach (person in staff) {
+    person.base_salary = 40000.0;
+    show(names[i], "bonus:", person.bonus());
+    i = i + 1;
+}

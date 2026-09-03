@@ -1,0 +1,18 @@
+## 118. Use a base-class-typed collection to display multiple derived objects polymorphically ##
+class Employee {
+    public:
+    virtual fun describe() -> chr { return "An employee"; }
+}
+class Developer extends Employee {
+    public:
+    fun describe() -> chr { return "A developer who writes code"; }
+}
+class Designer extends Employee {
+    public:
+    fun describe() -> chr { return "A designer who creates interfaces"; }
+}
+
+auto team = [new Developer(), new Designer(), new Employee()];
+foreach (member in team) {
+    show(member.describe());
+}

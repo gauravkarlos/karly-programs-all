@@ -1,0 +1,103 @@
+## Karly Templates / Generics -- both supported syntaxes. Karly has no compile-time type checking, so a "template" here isn't specialized per type the way a real C++ template is compiled -- the type parameter (T, K, V, ...) just becomes a usable, documentary type name inside the declaration. The real payoff is the same class or function body working correctly across many different data types without being rewritten, demonstrated below. ##
+
+## ---- 1. C++-style: template <typename T> ---- ##
+template <typename T>
+class Box {
+    public:
+    T value;
+
+    fun __init__(T v) {
+        this.value = v;
+    }
+
+    fun get() -> T {
+        return this.value;
+    }
+
+    fun describe() -> chr {
+        return "Box holds: " + to_str(this.value);
+    }
+}
+
+auto int_box = new Box(42);
+auto dou_box = new Box(3.14159);
+auto str_box = new Box("Karly");
+
+show(int_box.describe());
+show(dou_box.describe());
+show(str_box.describe());
+
+## ---- 2. Python-like: Name[T] ---- ##
+class Stack[T] {
+    private:
+    auto items;
+
+    public:
+    fun __init__() {
+        this.items = [];
+    }
+
+    fun push(T item) {
+        append(this.items, item);
+    }
+
+    fun size() -> inte {
+        return len(this.items);
+    }
+
+    fun peek() -> T {
+        return this.items[len(this.items) - 1];
+    }
+}
+
+auto number_stack = new Stack();
+number_stack.push(10);
+number_stack.push(20);
+number_stack.push(30);
+show("Stack size:", number_stack.size(), "  top:", number_stack.peek());
+
+auto word_stack = new Stack();
+word_stack.push("first");
+word_stack.push("second");
+show("Word stack top:", word_stack.peek());
+
+## ---- 3. Multiple type parameters (C++-style) ---- ##
+template <typename K, typename V>
+class Pair {
+    public:
+    K key;
+    V value;
+
+    fun __init__(K k, V v) {
+        this.key = k;
+        this.value = v;
+    }
+
+    fun show_pair() {
+        show(this.key, "->", this.value);
+    }
+}
+
+auto p1 = new Pair("age", 30);
+auto p2 = new Pair(1, "one");
+p1.show_pair();
+p2.show_pair();
+
+## ---- 4. A generic function, Python-like syntax ---- ##
+fun identity[T](T x) -> T {
+    return x;
+}
+show("identity(99):", identity(99));
+show("identity(2.5):", identity(2.5));
+show("identity('hi'):", identity("hi"));
+
+## ---- 5. A generic function, C++-style ---- ##
+template <typename T>
+fun larger(T a, T b) -> T {
+    if (a > b) {
+        return a;
+    }
+    return b;
+}
+show("larger(7, 12):", larger(7, 12));
+show("larger('apple', 'banana'):", larger("apple", "banana"));

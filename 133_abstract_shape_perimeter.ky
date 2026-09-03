@@ -1,0 +1,23 @@
+## 133. Use an abstract Shape class to unify perimeter calculations ##
+class Shape {
+    public:
+    virtual fun perimeter() -> dou {
+        throw "Shape.perimeter() must be overridden";
+    }
+}
+class Square extends Shape {
+    public:
+    dou side = 0.0;
+    fun __init__(dou s) { this.side = s; }
+    fun perimeter() -> dou { return 4.0 * this.side; }
+}
+class Circle extends Shape {
+    public:
+    dou radius = 0.0;
+    fun __init__(dou r) { this.radius = r; }
+    fun perimeter() -> dou { return 2.0 * 3.14159 * this.radius; }
+}
+auto shapes = [new Square(5.0), new Circle(3.0)];
+foreach (s in shapes) {
+    show("Perimeter:", s.perimeter());
+}

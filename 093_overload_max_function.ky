@@ -1,0 +1,9 @@
+## 93. Overload a function to find the maximum of two or three numbers ##
+fun maximum(dou a, dou b, dou c = -999999.0) -> dou {
+    dou m = a;
+    if (b > m) { m = b; }
+    if (c > m) { m = c; }
+    return m;
+}
+show("Max of 3, 9:", maximum(3.0, 9.0));
+show("Max of 3, 9, 5:", maximum(3.0, 9.0, 5.0));

@@ -1,0 +1,15 @@
+## 139. Overload the == operator to compare two objects for equality ##
+class Point {
+    public:
+    inte x = 0;
+    inte y = 0;
+    fun __init__(inte px, inte py) { this.x = px; this.y = py; }
+    fun equals(auto other) -> boole {
+        return this.x == other.x && this.y == other.y;
+    }
+}
+auto p1 = new Point(3, 4);
+auto p2 = new Point(3, 4);
+auto p3 = new Point(1, 1);
+show("p1 equals p2:", p1.equals(p2));
+show("p1 equals p3:", p1.equals(p3));

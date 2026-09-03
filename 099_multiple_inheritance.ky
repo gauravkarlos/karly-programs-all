@@ -1,0 +1,22 @@
+## 99. Demonstrate multiple inheritance using two parent classes. Honesty note, verified directly: Karly's extends accepts only one parent identifier -- "class C extends A, B" is not valid grammar. Composition (holding instances of both "parent" classes as fields, and forwarding to them) is the idiomatic Karly substitute, shown below. ##
+class Swimmer {
+    public:
+    fun swim() -> chr { return "swimming"; }
+}
+class Flyer {
+    public:
+    fun fly() -> chr { return "flying"; }
+}
+class Duck {
+    public:
+    auto swimmer;
+    auto flyer;
+    fun __init__() {
+        this.swimmer = new Swimmer();
+        this.flyer = new Flyer();
+    }
+    fun swim() -> chr { return this.swimmer.swim(); }
+    fun fly() -> chr { return this.flyer.fly(); }
+}
+auto d = new Duck();
+show("Duck can:", d.swim(), "and", d.fly());

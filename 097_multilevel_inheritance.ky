@@ -1,0 +1,25 @@
+## 97. Demonstrate multilevel inheritance (Person -> Employee -> Manager) ##
+class Person {
+    public:
+    chr name = "";
+    fun __init__(chr n) { this.name = n; }
+}
+class Employee extends Person {
+    public:
+    dou salary = 0.0;
+    fun __init__(chr n, dou s) { this.name = n; this.salary = s; }
+}
+class Manager extends Employee {
+    public:
+    inte team_size = 0;
+    fun __init__(chr n, dou s, inte team) {
+        this.name = n;
+        this.salary = s;
+        this.team_size = team;
+    }
+    fun display() {
+        show(this.name, " earns", this.salary, " and manages", this.team_size, "people");
+    }
+}
+auto m = new Manager("Vikram", 90000.0, 8);
+m.display();

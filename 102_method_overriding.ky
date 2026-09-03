@@ -1,0 +1,19 @@
+## 102. Demonstrate method overriding in inheritance ##
+class Shape {
+    public:
+    virtual fun area() -> dou {
+        return 0.0;
+    }
+}
+class Circle extends Shape {
+    public:
+    dou radius = 0.0;
+    fun __init__(dou r) { this.radius = r; }
+    fun area() -> dou {
+        return 3.14159 * this.radius * this.radius;
+    }
+}
+auto s = new Shape();
+auto c = new Circle(4.0);
+show("Base Shape area:", s.area());
+show("Overridden Circle area:", c.area());

@@ -1,0 +1,9 @@
+## 94. Overload a greeting function for different numbers of details ##
+fun greet(chr name, chr title = "") -> chr {
+    if (title == "") {
+        return "Hello, " + name + "!";
+    }
+    return "Hello, " + title + " " + name + "!";
+}
+show(greet("Karly"));
+show(greet("Roy", "Dr."));

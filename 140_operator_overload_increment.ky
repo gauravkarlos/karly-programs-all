@@ -1,0 +1,13 @@
+## 140. Overload the ++ operator to increment an object's value ##
+class Counter {
+    public:
+    inte value = 0;
+    fun __init__(inte v) { this.value = v; }
+    fun increment() {
+        this.value = this.value + 1;
+    }
+}
+auto c = new Counter(9);
+c.increment();
+c.increment();
+show("Counter value:", c.value);

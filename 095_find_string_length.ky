@@ -1,0 +1,7 @@
+## 95. Find string length (without a built-in length helper) ##
+chr text = input("Enter a string: ");
+inte count = 0;
+foreach (ch in text) {
+    count = count + 1;
+}
+show("Length:", count);

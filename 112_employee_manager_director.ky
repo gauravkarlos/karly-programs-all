@@ -1,0 +1,26 @@
+## 112. Create an Employee -> Manager -> Director hierarchy ##
+class Employee {
+    public:
+    chr name = "";
+    dou salary = 0.0;
+    fun __init__(chr n, dou s) { this.name = n; this.salary = s; }
+}
+class Manager extends Employee {
+    public:
+    inte team_size = 0;
+    fun __init__(chr n, dou s, inte t) {
+        this.name = n; this.salary = s; this.team_size = t;
+    }
+}
+class Director extends Manager {
+    public:
+    inte departments = 0;
+    fun __init__(chr n, dou s, inte t, inte dept) {
+        this.name = n; this.salary = s; this.team_size = t; this.departments = dept;
+    }
+    fun display() {
+        show(this.name, "oversees", this.departments, "departments and", this.team_size, "people directly");
+    }
+}
+auto dir = new Director("Kabir", 150000.0, 4, 3);
+dir.display();

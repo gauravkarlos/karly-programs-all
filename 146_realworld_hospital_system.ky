@@ -1,0 +1,38 @@
+## 146. Build a real-world hospital management mini-system using OOP ##
+class Patient {
+    public:
+    chr name = "";
+    chr condition = "";
+    boole admitted = false;
+    fun __init__(chr n, chr c) { this.name = n; this.condition = c; }
+    fun admit() {
+        this.admitted = true;
+        show(this.name, "admitted for", this.condition);
+    }
+    fun discharge() {
+        this.admitted = false;
+        show(this.name, "discharged");
+    }
+}
+class Hospital {
+    public:
+    auto patients;
+    fun __init__() { this.patients = []; }
+    fun register_patient(auto p) {
+        append(this.patients, p);
+        p.admit();
+    }
+    fun count_admitted() -> inte {
+        inte count = 0;
+        foreach (p in this.patients) {
+            if (p.admitted) { count = count + 1; }
+        }
+        return count;
+    }
+}
+auto hospital = new Hospital();
+hospital.register_patient(new Patient("Rahul", "Fever"));
+hospital.register_patient(new Patient("Sneha", "Fracture"));
+show("Currently admitted:", hospital.count_admitted());
+hospital.patients[0].discharge();
+show("Currently admitted:", hospital.count_admitted());

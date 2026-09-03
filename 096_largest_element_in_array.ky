@@ -1,0 +1,12 @@
+## 96. Find largest element in an array ##
+auto numbers = [45, 12, 89, 3, 67, 29];
+inte largest = numbers[0];
+inte i = 1;
+while (i < len(numbers)) {
+    if (numbers[i] > largest) {
+        largest = numbers[i];
+    }
+    i = i + 1;
+}
+show("Array:", numbers);
+show("Largest element:", largest);

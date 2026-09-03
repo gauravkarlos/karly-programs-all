@@ -1,0 +1,18 @@
+## 101. Call a base class constructor explicitly from a derived class. Verified directly: extends does NOT auto-chain __init__ (see program 45), so the derived constructor calls a plain base method by name to get the same effect. ##
+class Animal {
+    public:
+    chr species = "";
+    fun init_animal(chr s) {
+        this.species = s;
+        show("Animal constructor logic ran for", s);
+    }
+}
+class Dog extends Animal {
+    public:
+    fun __init__() {
+        this.init_animal("Dog");
+        show("Dog constructor logic ran");
+    }
+}
+auto d = new Dog();
+show("species:", d.species);

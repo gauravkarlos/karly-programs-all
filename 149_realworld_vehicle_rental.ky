@@ -1,0 +1,39 @@
+## 149. Build a real-world vehicle rental mini-system using OOP ##
+class Vehicle {
+    public:
+    chr plate = "";
+    boole available = true;
+    dou daily_rate = 0.0;
+    fun __init__(chr p, dou rate) { this.plate = p; this.daily_rate = rate; }
+    fun rent(inte days) -> dou {
+        if (!this.available) {
+            show(this.plate, "is not available");
+            return 0.0;
+        }
+        this.available = false;
+        return this.daily_rate * to_dou(days);
+    }
+    fun return_vehicle() {
+        this.available = true;
+        show(this.plate, "returned");
+    }
+}
+class RentalAgency {
+    public:
+    auto fleet;
+    fun __init__() { this.fleet = []; }
+    fun add_vehicle(auto v) { append(this.fleet, v); }
+    fun available_count() -> inte {
+        inte count = 0;
+        foreach (v in this.fleet) {
+            if (v.available) { count = count + 1; }
+        }
+        return count;
+    }
+}
+auto agency = new RentalAgency();
+agency.add_vehicle(new Vehicle("KA-01-AB", 1500.0));
+agency.add_vehicle(new Vehicle("KA-02-CD", 1800.0));
+dou cost = agency.fleet[0].rent(3);
+show("Rental cost:", cost);
+show("Vehicles still available:", agency.available_count());

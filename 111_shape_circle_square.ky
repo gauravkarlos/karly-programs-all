@@ -1,0 +1,21 @@
+## 111. Create a Shape base class with Circle and Square derived classes ##
+class Shape {
+    public:
+    fun area() -> dou { return 0.0; }
+}
+class Circle extends Shape {
+    public:
+    dou radius = 0.0;
+    fun __init__(dou r) { this.radius = r; }
+    fun area() -> dou { return 3.14159 * this.radius * this.radius; }
+}
+class Square extends Shape {
+    public:
+    dou side = 0.0;
+    fun __init__(dou s) { this.side = s; }
+    fun area() -> dou { return this.side * this.side; }
+}
+auto c = new Circle(4.0);
+auto sq = new Square(5.0);
+show("Circle area:", c.area());
+show("Square area:", sq.area());

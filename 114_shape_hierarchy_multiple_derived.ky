@@ -1,0 +1,36 @@
+## 114. Create a Shape hierarchy with multiple derived classes and compare areas ##
+class Shape {
+    public:
+    chr kind = "Shape";
+    fun area() -> dou { return 0.0; }
+}
+class Circle extends Shape {
+    public:
+    dou radius = 0.0;
+    fun __init__(dou r) { this.kind = "Circle"; this.radius = r; }
+    fun area() -> dou { return 3.14159 * this.radius * this.radius; }
+}
+class Rectangle extends Shape {
+    public:
+    dou length = 0.0;
+    dou width = 0.0;
+    fun __init__(dou l, dou w) { this.kind = "Rectangle"; this.length = l; this.width = w; }
+    fun area() -> dou { return this.length * this.width; }
+}
+class Triangle extends Shape {
+    public:
+    dou base = 0.0;
+    dou height = 0.0;
+    fun __init__(dou b, dou h) { this.kind = "Triangle"; this.base = b; this.height = h; }
+    fun area() -> dou { return 0.5 * this.base * this.height; }
+}
+
+auto shapes = [new Circle(3.0), new Rectangle(4.0, 5.0), new Triangle(6.0, 4.0)];
+auto largest = shapes[0];
+foreach (s in shapes) {
+    show(s.kind, "area:", s.area());
+    if (s.area() > largest.area()) {
+        largest = s;
+    }
+}
+show("Largest shape:", largest.kind, "with area", largest.area());

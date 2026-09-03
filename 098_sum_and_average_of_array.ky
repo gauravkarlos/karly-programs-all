@@ -1,0 +1,12 @@
+## 98. Find sum and average of an array ##
+auto numbers = [10, 20, 30, 40, 50];
+inte total = 0;
+inte i = 0;
+while (i < len(numbers)) {
+    total = total + numbers[i];
+    i = i + 1;
+}
+dou average = to_dou(total) / to_dou(len(numbers));
+show("Array:", numbers);
+show("Sum:", total);
+show("Average:", average);

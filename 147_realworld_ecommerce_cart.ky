@@ -1,0 +1,28 @@
+## 147. Build a real-world e-commerce shopping cart using OOP ##
+class Product {
+    public:
+    chr name = "";
+    dou price = 0.0;
+    fun __init__(chr n, dou p) { this.name = n; this.price = p; }
+}
+class Cart {
+    public:
+    auto items;
+    fun __init__() { this.items = []; }
+    fun add_item(auto product, inte qty) {
+        append(this.items, (product, qty));
+    }
+    fun total() -> dou {
+        dou sum = 0.0;
+        foreach (entry in this.items) {
+            auto product = entry[0];
+            inte qty = entry[1];
+            sum = sum + (product.price * to_dou(qty));
+        }
+        return sum;
+    }
+}
+auto cart = new Cart();
+cart.add_item(new Product("Keyboard", 1200.0), 1);
+cart.add_item(new Product("Mouse", 600.0), 2);
+show("Cart total:", cart.total());

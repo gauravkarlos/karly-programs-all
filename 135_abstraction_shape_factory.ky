@@ -1,0 +1,29 @@
+## 135. Combine abstraction with a simple factory-style function that returns the right shape object ##
+class Shape {
+    public:
+    virtual fun area() -> dou { throw "Shape.area() must be overridden"; }
+}
+class Circle extends Shape {
+    public:
+    dou radius = 0.0;
+    fun __init__(dou r) { this.radius = r; }
+    fun area() -> dou { return 3.14159 * this.radius * this.radius; }
+}
+class Square extends Shape {
+    public:
+    dou side = 0.0;
+    fun __init__(dou s) { this.side = s; }
+    fun area() -> dou { return this.side * this.side; }
+}
+
+fun make_shape(chr kind, dou size) -> auto {
+    if (kind == "circle") {
+        return new Circle(size);
+    }
+    return new Square(size);
+}
+
+auto shape1 = make_shape("circle", 4.0);
+auto shape2 = make_shape("square", 4.0);
+show("Factory circle area:", shape1.area());
+show("Factory square area:", shape2.area());

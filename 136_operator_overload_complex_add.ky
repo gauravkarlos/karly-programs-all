@@ -1,0 +1,17 @@
+## 136. Overload the + operator to add two complex numbers. Honesty note, verified directly: Karly does not support operator overloading on custom objects -- "v1 + v2" between two class instances raises a clean runtime error. The idiomatic substitute is an explicit method, .add() below, which is what every operator-overloading program in this section uses. ##
+class Complex {
+    public:
+    dou real = 0.0;
+    dou imag = 0.0;
+    fun __init__(dou r, dou i) { this.real = r; this.imag = i; }
+    fun add(auto other) -> auto {
+        return new Complex(this.real + other.real, this.imag + other.imag);
+    }
+    fun display() {
+        show(this.real, "+", this.imag, "i");
+    }
+}
+auto c1 = new Complex(3.0, 4.0);
+auto c2 = new Complex(1.0, 2.0);
+auto sum = c1.add(c2);
+sum.display();

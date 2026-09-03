@@ -1,0 +1,24 @@
+## 110. Create a Vehicle -> Car -> SportsCar hierarchy ##
+class Vehicle {
+    public:
+    chr brand = "";
+    fun __init__(chr b) { this.brand = b; }
+}
+class Car extends Vehicle {
+    public:
+    inte doors = 4;
+}
+class SportsCar extends Car {
+    public:
+    inte top_speed = 0;
+    fun __init__(chr b, inte speed) {
+        this.brand = b;
+        this.doors = 2;
+        this.top_speed = speed;
+    }
+    fun display() {
+        show(this.brand, "sports car --", this.doors, "doors, top speed", this.top_speed);
+    }
+}
+auto sc = new SportsCar("Ferrari", 340);
+sc.display();

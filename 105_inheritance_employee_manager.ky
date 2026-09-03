@@ -1,0 +1,21 @@
+## 105. Use inheritance to extend Employee into Manager with a bonus ##
+class Employee {
+    public:
+    chr name = "";
+    dou salary = 0.0;
+    fun __init__(chr n, dou s) { this.name = n; this.salary = s; }
+}
+class Manager extends Employee {
+    public:
+    dou bonus = 0.0;
+    fun __init__(chr n, dou s, dou b) {
+        this.name = n;
+        this.salary = s;
+        this.bonus = b;
+    }
+    fun total_pay() -> dou {
+        return this.salary + this.bonus;
+    }
+}
+auto m = new Manager("Divya", 60000.0, 15000.0);
+show(m.name, "total pay:", m.total_pay());

@@ -1,0 +1,26 @@
+## 123. Simulate an interface using an abstract Payable class with multiple implementations ##
+class Payable {
+    public:
+    virtual fun amount_due() -> dou {
+        throw "Payable.amount_due() must be implemented";
+    }
+}
+class Invoice extends Payable {
+    public:
+    dou subtotal = 0.0;
+    fun __init__(dou s) { this.subtotal = s; }
+    fun amount_due() -> dou { return this.subtotal * 1.18; }
+}
+class Subscription extends Payable {
+    public:
+    dou monthly_fee = 0.0;
+    fun __init__(dou f) { this.monthly_fee = f; }
+    fun amount_due() -> dou { return this.monthly_fee; }
+}
+
+auto bills = [new Invoice(1000.0), new Subscription(499.0)];
+dou total_due = 0.0;
+foreach (bill in bills) {
+    total_due = total_due + bill.amount_due();
+}
+show("Total amount due across all payables:", total_due);

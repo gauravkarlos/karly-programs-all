@@ -1,0 +1,17 @@
+## 109. Create an Animal -> Mammal -> Dog hierarchy ##
+class Animal {
+    public:
+    chr name = "";
+    fun __init__(chr n) { this.name = n; }
+}
+class Mammal extends Animal {
+    public:
+    fun feed_milk() { show(this.name, "feeds its young milk"); }
+}
+class Dog extends Mammal {
+    public:
+    fun bark() { show(this.name, "barks"); }
+}
+auto d = new Dog("Rex");
+d.feed_milk();
+d.bark();

@@ -1,0 +1,65 @@
+## colon_scope_demo.ky ##
+## Demonstrates Karly's Python-style "colon + indentation" block syntax, ##
+## used side by side with (and even mixed within) the original C++-style ##
+## brace syntax -- both are fully supported, everywhere a block is ##
+## expected: if/elif/el, while, do-while, for, foreach, try/catch, and ##
+## function/constructor/method bodies. Conditions still require ##
+## parentheses either way -- only the block delimiter itself is ##
+## pluggable, so Karly's C++ flavor stays intact. ##
+
+## A function body using a colon instead of { } ##
+fun classify(n):
+    if (n > 100):
+        show(n, "is huge");
+    elif (n > 10):
+        show(n, "is medium");
+    el:
+        show(n, "is small");
+
+classify(3);
+classify(50);
+classify(500);
+
+## A loop using colon style ##
+inte total = 0;
+for (inte i = 1; i <= 5; i++):
+    total = total + i;
+show("Sum 1..5 =", total);
+
+## Mixing styles in one program is completely fine: colon-style while, ##
+## brace-style if inside it. ##
+inte n = 3;
+while (n > 0):
+    if (n == 2) {
+        show("two!");
+    } el {
+        show("n =", n);
+    }
+    n = n - 1;
+
+## Single-line inline form, Python-style: "if cond: single_statement;" ##
+if (total > 10): show("total is more than 10");
+
+## A class whose methods use colon bodies (the class's own outer braces ##
+## stay brace-only, since public:/private:/protected: already use colons ##
+## as access-specifier labels -- see the note in the report). ##
+class Counter {
+    public:
+    inte value;
+
+    Counter():
+        this.value = 0;
+
+    fun increment():
+        this.value = this.value + 1;
+
+    fun show_value():
+        show("counter =", this.value);
+}
+
+auto c = new Counter();
+c.increment();
+c.increment();
+c.show_value();
+
+show("Done.");

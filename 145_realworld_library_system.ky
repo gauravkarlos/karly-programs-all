@@ -1,0 +1,38 @@
+## 145. Build a real-world library management mini-system using OOP ##
+class Book {
+    public:
+    chr title = "";
+    boole is_borrowed = false;
+    fun __init__(chr t) { this.title = t; }
+    fun borrow() {
+        if (this.is_borrowed) {
+            show(this.title, "is already borrowed");
+            return;
+        }
+        this.is_borrowed = true;
+        show("You borrowed:", this.title);
+    }
+    fun return_book() {
+        this.is_borrowed = false;
+        show("Returned:", this.title);
+    }
+}
+class Library {
+    public:
+    auto books;
+    fun __init__() { this.books = []; }
+    fun add_book(auto b) { append(this.books, b); }
+    fun list_available() {
+        show("Available books:");
+        foreach (b in this.books) {
+            if (!b.is_borrowed) {
+                show(" -", b.title);
+            }
+        }
+    }
+}
+auto lib = new Library();
+lib.add_book(new Book("Karly Basics"));
+lib.add_book(new Book("Loops and Logic"));
+lib.books[0].borrow();
+lib.list_available();

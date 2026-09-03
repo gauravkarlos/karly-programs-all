@@ -1,0 +1,19 @@
+## 127. Combine polymorphism with duck typing across unrelated classes ##
+class Robot {
+    public:
+    fun speak() -> chr { return "Beep boop"; }
+}
+class Human {
+    public:
+    fun speak() -> chr { return "Hello there"; }
+}
+class Rock { }
+
+auto things = [new Robot(), new Human(), new Rock()];
+foreach (thing in things) {
+    if (has_method(thing, "speak")) {
+        show(thing.speak());
+    } el {
+        show("(silent)");
+    }
+}

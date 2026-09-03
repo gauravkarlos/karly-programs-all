@@ -1,0 +1,22 @@
+## 106. Create a BankAccount base class and a SavingsAccount derived class ##
+class BankAccount {
+    public:
+    dou balance = 0.0;
+    fun __init__(dou b) { this.balance = b; }
+    fun deposit(dou amount) { this.balance = this.balance + amount; }
+}
+class SavingsAccount extends BankAccount {
+    public:
+    dou interest_rate = 0.0;
+    fun __init__(dou b, dou rate) {
+        this.balance = b;
+        this.interest_rate = rate;
+    }
+    fun add_interest() {
+        this.balance = this.balance + (this.balance * this.interest_rate / 100.0);
+    }
+}
+auto sa = new SavingsAccount(10000.0, 5.0);
+sa.deposit(2000.0);
+sa.add_interest();
+show("Savings balance after interest:", sa.balance);

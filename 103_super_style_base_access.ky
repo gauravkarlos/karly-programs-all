@@ -1,0 +1,15 @@
+## 103. Access base class members from a derived class. Honesty note: Karly has no "super" keyword -- a derived class calls a base method the same way it calls any of its own inherited methods, through this. ##
+class Base {
+    public:
+    fun base_message() -> chr {
+        return "message from Base";
+    }
+}
+class Derived extends Base {
+    public:
+    fun show_combined() {
+        show("Derived says: I can still call ->", this.base_message());
+    }
+}
+auto d = new Derived();
+d.show_combined();

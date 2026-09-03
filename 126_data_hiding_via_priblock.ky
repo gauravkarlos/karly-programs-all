@@ -1,0 +1,17 @@
+## 126. Demonstrate abstraction and data hiding together using priblock ##
+class Engine {
+    priblock:
+        boole running;
+    public:
+    fun start() {
+        this.running = 1;
+        show("Engine started");
+    }
+    fun status() -> boole {
+        return this.running;
+    }
+}
+auto e = new Engine();
+show("Before start:", e.status());
+e.start();
+show("After start:", e.status());

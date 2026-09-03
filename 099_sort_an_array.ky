@@ -1,0 +1,19 @@
+## 99. Sort an array (Bubble Sort, ascending) ##
+auto numbers = [64, 25, 12, 22, 11];
+show("Before sorting:", numbers);
+
+inte n = len(numbers);
+inte i = 0;
+while (i < n - 1) {
+    inte j = 0;
+    while (j < n - i - 1) {
+        if (numbers[j] > numbers[j + 1]) {
+            inte temp = numbers[j];
+            numbers[j] = numbers[j + 1];
+            numbers[j + 1] = temp;
+        }
+        j = j + 1;
+    }
+    i = i + 1;
+}
+show("After sorting:", numbers);

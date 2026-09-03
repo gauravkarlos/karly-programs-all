@@ -1,0 +1,20 @@
+## 131. Model a notification system using abstraction -- different channels, one interface ##
+class Notifier {
+    public:
+    virtual fun send(chr message) -> chr {
+        throw "Notifier.send() must be overridden";
+    }
+}
+class EmailNotifier extends Notifier {
+    public:
+    fun send(chr message) -> chr { return "Email sent: " + message; }
+}
+class SmsNotifier extends Notifier {
+    public:
+    fun send(chr message) -> chr { return "SMS sent: " + message; }
+}
+
+auto channels = [new EmailNotifier(), new SmsNotifier()];
+foreach (channel in channels) {
+    show(channel.send("Your order has shipped"));
+}

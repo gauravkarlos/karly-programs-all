@@ -1,0 +1,17 @@
+## 94. Count words in a string (words separated by single spaces) ##
+chr text = input("Enter a sentence: ");
+inte word_count = 0;
+boole in_word = false;
+
+foreach (ch in text) {
+    if (ch == " ") {
+        in_word = false;
+    } el {
+        if (!in_word) {
+            word_count = word_count + 1;
+        }
+        in_word = true;
+    }
+}
+
+show("Word count:", word_count);
