@@ -1,0 +1,27 @@
+## Program 151: switch case demonstration ##
+show("You can enter your choice from 1-6!");
+show("Enter your choice:");
+inte i = to_inte(input());
+switch(i){
+	case 1:
+		show("You have selected option 1");
+		break;
+	case 2:
+		show("You have selected option 2");
+		break;
+	case 3:
+		show("You have selected option 3");
+		break;
+	case 4:
+		show("You have selected option 4");
+		break;
+	case 5:
+		show("You have selected option 5");
+		break;
+	case 6:
+		show("You have selected option 6");
+		break;
+	def:
+		show("You have selected invalid option");
+		break;
+}
