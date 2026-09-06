@@ -1,0 +1,5 @@
+## Program 152: foreach-in demo ##
+auto numbers = [23,68,90,736,645];
+foreach (item in numbers) {
+    show(item);
+}
